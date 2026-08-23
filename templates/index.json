@@ -38,37 +38,10 @@
             "content_box_opacity": 100,
             "content_alignment_mobile": "center"
           }
-        },
-        "slider_item_iAiXpe": {
-          "type": "slider_item",
-          "settings": {
-            "overlay_opacity": 10,
-            "slider_effect": "effect_fadeindown",
-            "subheading": "NEW ARRIVALS",
-            "heading": "Beauty for Everyone",
-            "description": "<p>Celebrate diversity and confidence with our latest beauty collection. Enjoy an exclusive 15% off for a limited time!</p>",
-            "first_button_label": "Shop Collection",
-            "first_button_link": "shopify://collections/shop-lip",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "content_alignment": "center",
-            "content_position": "bottom-center",
-            "content_width": "fluid_container",
-            "content_max_width": 48,
-            "content_padding_block": 80,
-            "content_padding_inline": 60,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "content_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
-        "slider_item_jiLA39",
-        "slider_item_iAiXpe"
+        "slider_item_jiLA39"
       ],
       "custom_css": [
         ".h-full_screen {--height-topbar: 40px;}"
