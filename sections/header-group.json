@@ -43,7 +43,7 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "scheme-d7a36a6e-2409-45dd-9c00-3d4796e41325",
-        "show_mobile": false,
+        "show_mobile": true,
         "show_separator_line": false,
         "uppercase": false,
         "font_size": 13,
