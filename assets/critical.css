@@ -514,7 +514,9 @@ strong {
 .swiper.flex {
   display: flex;
 }
-
+:where(.hidden, [hidden], .no-js .no-js-hidden) {
+  display: none;
+}
 .inline-flex {
   display: inline-flex;
 }
