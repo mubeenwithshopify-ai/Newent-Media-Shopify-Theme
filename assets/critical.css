@@ -514,7 +514,11 @@ strong {
 .swiper.flex {
   display: flex;
 }
-
+button.top-search-toggle.header-icon{
+  position: absolute;
+  top: 65px;
+  left: 35px;
+}
 .inline-flex {
   display: inline-flex;
 }
