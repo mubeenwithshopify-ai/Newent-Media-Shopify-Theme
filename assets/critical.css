@@ -514,15 +514,7 @@ strong {
 .swiper.flex {
   display: flex;
 }
-@media screen and (max-width: 1024.98px) {
-    .header-middle .header_search {
-        position: absolute;
-        left: 30px;
-        top: 15px;
-        z-index: 5;
-        margin: 0;
-    }
-}
+
 .inline-flex {
   display: inline-flex;
 }
