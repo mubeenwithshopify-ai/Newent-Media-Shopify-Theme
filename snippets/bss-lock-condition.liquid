@@ -64,17 +64,6 @@
 {% endif %}
 
 
-				{% assign start_trial_date_v2 = 'Thu Aug 20 2026 14:45:08 GMT+0000 (Coordinated Universal Time)' | date: '%s' %}
-				{% assign current_date_time_now = 'now' | date: '%s' %}
-				{% assign time_diff = current_date_time_now | minus: start_trial_date_v2 %}
-				{% assign days_diff = time_diff | divided_by: 86400 %}
-				{% assign remain_trial_days_v2 = 7 %}
-	
-				{% if days_diff < remain_trial_days_v2 %}
-					{% assign trial_expired = false %}
-				{% else %}
-					{% assign trial_expired = true %}
-				{% endif %}
 {% if scope == 'subject' %}
     {% if subject %}
         {% assign subject_object = subject %}
