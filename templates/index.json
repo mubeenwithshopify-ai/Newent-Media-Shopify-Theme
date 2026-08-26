@@ -245,11 +245,11 @@
           "type": "content",
           "settings": {
             "heading": "Ready to Start Wholesale Ordering?",
-            "font_size": 24,
+            "font_size": 30,
             "font_weight": "heading_weight",
             "uppercase": false,
             "description": "<p>Join hundreds of businesses already saving with NEWENT MEDIA wholesale pricing. Apply for your account today — approval takes just 24-48 hours.</p>",
-            "font_size_des": 14
+            "font_size_des": 16
           }
         },
         "button_6YPUPG": {
@@ -269,12 +269,12 @@
       ],
       "name": "t:sections.promotion_banner.name",
       "settings": {
-        "section_width": "container",
-        "color_scheme": "",
+        "section_width": "fluid_container",
+        "color_scheme": "scheme-d7a36a6e-2409-45dd-9c00-3d4796e41325",
         "image_overlay_opacity": 0,
         "content_width": "full_width",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "reset_spacing": false
       }
     },
