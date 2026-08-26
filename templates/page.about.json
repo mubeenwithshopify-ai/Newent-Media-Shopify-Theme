@@ -70,7 +70,7 @@
         "description_4JjTUX"
       ],
       "settings": {
-        "section_width": "container",
+        "section_width": "fluid_container",
         "color_scheme": "",
         "content_alignment": "center",
         "content_max_width": 70,
@@ -99,7 +99,7 @@
         "image_V9PiPt"
       ],
       "settings": {
-        "section_width": "container",
+        "section_width": "fluid_container",
         "heading": "",
         "description": "",
         "header_size": "medium",
@@ -154,7 +154,7 @@
         "counter_FmWY3q"
       ],
       "settings": {
-        "section_width": "container",
+        "section_width": "fluid_container",
         "color_scheme": "",
         "heading": "",
         "description": "",
