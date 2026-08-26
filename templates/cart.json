@@ -76,27 +76,34 @@
         "bss_b2b_solution_te_X6pdPp": {
           "type": "shopify://apps/bss-b2b-solution/blocks/te/451233f2-9631-4c49-8b6f-057e4ebcde7f",
           "settings": {
-            "error_color": "#FF0000",
-            "success_color": "#00FF00",
+            "error_color": "#ff0000",
+            "success_color": "#00ff00",
             "header_text_color": "#000",
             "subtitle_color": "#000"
+          }
+        },
+        "bss_b2b_solution_nt_QDdW7Q": {
+          "type": "shopify://apps/bss-b2b-solution/blocks/nt/451233f2-9631-4c49-8b6f-057e4ebcde7f",
+          "settings": {
+            "text_color": "#FFFFFF",
+            "background_color": "#121212",
+            "button_width": 350,
+            "button_height": 48,
+            "align_button": "right",
+            "display_text": "Pay later"
           }
         }
       },
       "block_order": [
-        "bss_b2b_solution_te_X6pdPp"
+        "bss_b2b_solution_te_X6pdPp",
+        "bss_b2b_solution_nt_QDdW7Q"
       ],
-      "settings": {}
-    },
-    "alireviews-section-dee47fb0-de47-4321-b713-a7ba7412ef32": {
-      "type": "apps",
       "settings": {}
     }
   },
   "order": [
     "heading",
     "cart-items",
-    "17877418881e41725e",
-    "alireviews-section-dee47fb0-de47-4321-b713-a7ba7412ef32"
+    "17877418881e41725e"
   ]
 }
