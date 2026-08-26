@@ -25,7 +25,7 @@
             "first_button_link": "shopify://collections/all",
             "first_button_style": false,
             "second_button_label": "OPEN A WHOLESALE ACCOUNT",
-            "second_button_link": "shopify://pages/wholesaler-registration-form",
+            "second_button_link": "shopify://pages/wholesale",
             "second_button_style": false,
             "content_alignment": "left",
             "content_position": "middle-left",
