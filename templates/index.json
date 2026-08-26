@@ -275,7 +275,7 @@
         "content_width": "full_width",
         "padding_top": 40,
         "padding_bottom": 40,
-        "reset_spacing": false
+        "reset_spacing": true
       }
     },
     "collection_list_VmEYkJ": {
