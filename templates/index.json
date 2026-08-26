@@ -396,6 +396,7 @@
     },
     "divider_dNWNfP": {
       "type": "divider",
+      "disabled": true,
       "settings": {
         "section_width": "full_width",
         "border_height": 1,
