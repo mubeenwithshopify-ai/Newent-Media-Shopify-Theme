@@ -314,7 +314,7 @@
           "type": "button",
           "settings": {
             "first_button_label": "Shop Now",
-            "first_button_link": "",
+            "first_button_link": "shopify://collections/all",
             "first_button_type": "outline",
             "second_button_label": "",
             "second_button_link": "",
@@ -371,7 +371,7 @@
         "button_6YPUPG": {
           "type": "button",
           "settings": {
-            "copy_button_label": "Button label",
+            "copy_button_label": "",
             "copy_button_type": "primary",
             "button_label": "Apply for a Wholesale Account",
             "button_link": "https://bp8r1v-ne.myshopify.com/pages/wholesaler-registration-form",
