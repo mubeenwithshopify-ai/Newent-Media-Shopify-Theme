@@ -64,8 +64,8 @@
       ],
       "settings": {
         "section_width": "fluid_container",
-        "color_scheme": "",
-        "enable_back_top": true,
+        "color_scheme": "scheme-d7a36a6e-2409-45dd-9c00-3d4796e41325",
+        "enable_back_top": false,
         "separator_line": "all-page",
         "enable_country_selector": true,
         "enable_language_selector": false,
