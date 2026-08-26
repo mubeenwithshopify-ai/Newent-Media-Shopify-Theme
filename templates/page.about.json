@@ -20,6 +20,7 @@
       "block_order": [
         "breadcrumb_kg6gTP"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "container",
         "color_scheme": "",
@@ -46,7 +47,7 @@
         "heading_LbN4kp": {
           "type": "heading",
           "settings": {
-            "heading": "Best Store<br> Available to Everyone!",
+            "heading": "Where Music Finds Its Atmosphere",
             "font_size": 42,
             "font_weight": "heading_weight",
             "uppercase": false,
@@ -56,8 +57,8 @@
         "description_4JjTUX": {
           "type": "description",
           "settings": {
-            "description": "<p>Over 15 years of experience, we have meticulously curated collections that transcend fleeting trends, <br/>embodying a timeless elegance that resonates with our discerning clientele.</p>",
-            "font_size": 15,
+            "description": "<p>NEWENT MEDIA is built on a deep love for music—the kind that lingers long after the last note fades. We curate soulful, atmospheric sounds and bring together albums made for late-night listening, open-road moments, and everything in between.</p><p>From <em>Midnight Sessions</em> and <em>Analog Dreams</em> to <em>Golden Hour</em>, <em>Northern Drift</em>, and <em>Desert Frequency</em>, every release is chosen for its feeling, character, and ability to tell a story. More than a music collection, we are a meeting place connecting curious listeners with artists who make the world sound a little more alive.</p>",
+            "font_size": 18,
             "font_weight": "body_weight",
             "spacing_bottom": 10
           }
@@ -75,7 +76,7 @@
         "content_max_width": 70,
         "enable_expand_content": false,
         "expand_content_button": "See all Information",
-        "padding_top": 0,
+        "padding_top": 43,
         "padding_bottom": 43,
         "reset_spacing": true
       }
@@ -119,31 +120,31 @@
         "counter_3z4qyg": {
           "type": "counter",
           "settings": {
-            "starting_number": 10,
-            "ending_number": 53,
-            "unit": "k",
-            "heading": "Products for Sale",
-            "description": "<p>That's why we strive to offer a diverse range of products that cater to all styles.</p>"
+            "starting_number": 0,
+            "ending_number": 42,
+            "unit": "+",
+            "heading": "Albums & Releases",
+            "description": "<p>A growing catalog of soulful, atmospheric records curated for every kind of listener.</p>"
           }
         },
         "counter_jQdJhG": {
           "type": "counter",
           "settings": {
             "starting_number": 0,
-            "ending_number": 8.5,
-            "unit": "k",
-            "heading": "Happy Customer",
-            "description": "<p>We pride ourselves on creating great products and experiences with our valued customers.</p>"
+            "ending_number": 28,
+            "unit": "+",
+            "heading": "Artists Featured",
+            "description": "<p>Independent voices and inspired artists shaping the NEWENT MEDIA sound.</p>"
           }
         },
         "counter_FmWY3q": {
           "type": "counter",
           "settings": {
             "starting_number": 0,
-            "ending_number": 13,
-            "unit": "k",
-            "heading": "Partner Brand",
-            "description": "<p>Partner with brands that share our values, striving to protect our environment.</p>"
+            "ending_number": 12,
+            "unit": "k+",
+            "heading": "Listeners Reached",
+            "description": "<p>A growing community discovering new favorites, one atmospheric listen at a time.</p>"
           }
         }
       },
@@ -166,10 +167,10 @@
         "number_font_size": 36,
         "number_font_weight": "subheading_weight",
         "number_spacing_bottom": 13,
-        "heading_font_size": 20,
+        "heading_font_size": 24,
         "heading_font_weight": "heading_weight",
         "heading_spacing_bottom": 12,
-        "des_font_size": 15,
+        "des_font_size": 18,
         "des_font_weight": "body_weight",
         "des_spacing_bottom": 0,
         "padding_top": 0,
@@ -186,56 +187,6 @@
         "reset_spacing": false
       }
     },
-    "rich_text_td9KN9": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_HdJBLD": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Why Choose Us",
-            "font_size": 15,
-            "font_weight": "heading_weight",
-            "uppercase": false,
-            "spacing_bottom": 4
-          }
-        },
-        "heading_izj8pi": {
-          "type": "heading",
-          "settings": {
-            "heading": "Our Peculiar Things",
-            "font_size": 36,
-            "font_weight": "heading_weight",
-            "uppercase": false,
-            "spacing_bottom": 10
-          }
-        },
-        "description_Jpw6Dw": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Our fashion products are characterized by innovative and on—trend designs. We pride ourselves in pushing the boundaries of conventional fashion, delivering new, bold and captivating styles.</p>",
-            "font_size": 15,
-            "font_weight": "body_weight",
-            "spacing_bottom": 10
-          }
-        }
-      },
-      "block_order": [
-        "subheading_HdJBLD",
-        "heading_izj8pi",
-        "description_Jpw6Dw"
-      ],
-      "settings": {
-        "section_width": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "content_max_width": 70,
-        "enable_expand_content": false,
-        "expand_content_button": "See all Information",
-        "padding_top": 0,
-        "padding_bottom": 25,
-        "reset_spacing": true
-      }
-    },
     "multi_content_VbbiBa": {
       "type": "multi-content",
       "blocks": {
@@ -245,11 +196,12 @@
             "color_scheme": "scheme-1",
             "content_width": "33.3333%",
             "vertical_align": "start",
+            "image": "shopify://shop_images/music-curation.png",
             "image_behavior": "none",
             "image_link": "",
-            "subheading": "",
-            "heading": "Cultural Standards",
-            "description": "<p>We are committed to setting high ethical standards in production and ensuring mindful manufacturing through audits, training and education.</p>",
+            "subheading": "Our Curation",
+            "heading": "Songs with a Story",
+            "description": "<p>We listen beyond the first impression, searching for records with warmth, depth, and a point of view. From intimate late-night sessions to expansive cinematic soundscapes, our selections are chosen to stay with you.</p>",
             "first_button_label": "",
             "first_button_link": "",
             "first_button_type": "link",
@@ -260,14 +212,14 @@
             "spacing_top": 28,
             "spacing_bottom": 0,
             "content_padding_inline": 0,
-            "subheading_font_size": 12,
+            "subheading_font_size": 14,
             "subheading_font_weight": "subheading_weight",
             "subheading_spacing_bottom": 8,
-            "heading_font_size": 18,
+            "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 8,
-            "des_font_size": 15,
+            "des_font_size": 16,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 0
           }
@@ -278,11 +230,12 @@
             "color_scheme": "scheme-1",
             "content_width": "33.3333%",
             "vertical_align": "start",
+            "image": "shopify://shop_images/live-artists.png",
             "image_behavior": "none",
             "image_link": "",
-            "subheading": "",
-            "heading": "Designed to Last",
-            "description": "<p>From traditional tailoring to the most informal pieces. Our Milano collections feature the latest trends with the maximum comfort.</p>",
+            "subheading": "Our Sound",
+            "heading": "From Soul to Atmosphere",
+            "description": "<p>We move freely through soulful grooves, ambient textures, electronic horizons, jazz-inflected moods, and honest indie voices. The thread is simple: music that creates a place, a mood, and a memory.</p>",
             "first_button_label": "",
             "first_button_link": "",
             "first_button_type": "link",
@@ -293,14 +246,14 @@
             "spacing_top": 28,
             "spacing_bottom": 0,
             "content_padding_inline": 0,
-            "subheading_font_size": 12,
+            "subheading_font_size": 14,
             "subheading_font_weight": "subheading_weight",
             "subheading_spacing_bottom": 15,
-            "heading_font_size": 18,
+            "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 8,
-            "des_font_size": 15,
+            "des_font_size": 16,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 0
           }
@@ -311,11 +264,12 @@
             "color_scheme": "scheme-1",
             "content_width": "33.3333%",
             "vertical_align": "start",
+            "image": "shopify://shop_images/recording-studio.png",
             "image_behavior": "none",
             "image_link": "",
-            "subheading": "",
-            "heading": "Freedom for Everyone",
-            "description": "<p>The designs have been created adopting the current trends, while leaving room for personal expression among young people.</p>",
+            "subheading": "Our Promise",
+            "heading": "Artists First, Always",
+            "description": "<p>NEWENT MEDIA exists to connect listeners with artists worth discovering. We champion distinctive voices, treat every release with care, and build a thoughtful home for music that deserves to be heard.</p>",
             "first_button_label": "",
             "first_button_link": "",
             "first_button_type": "link",
@@ -326,14 +280,14 @@
             "spacing_top": 28,
             "spacing_bottom": 0,
             "content_padding_inline": 0,
-            "subheading_font_size": 12,
+            "subheading_font_size": 14,
             "subheading_font_weight": "subheading_weight",
             "subheading_spacing_bottom": 15,
-            "heading_font_size": 18,
+            "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 8,
-            "des_font_size": 15,
+            "des_font_size": 16,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 0
           }
@@ -345,9 +299,9 @@
         "image_with_text_below_fA66be"
       ],
       "settings": {
-        "section_width": "container",
-        "heading": "",
-        "description": "",
+        "section_width": "fluid_container",
+        "heading": "Curated Sound. Lasting Feeling.",
+        "description": "<p>NEWENT MEDIA follows the feeling—bringing soulful, atmospheric music into <br/>focus and giving every record room to breathe.</p>",
         "header_size": "medium",
         "header_alignment": "center",
         "column_gap": 30,
@@ -359,384 +313,6 @@
         "padding_bottom": 72,
         "reset_spacing": true
       }
-    },
-    "rich_text_yjfBc8": {
-      "type": "rich-text",
-      "blocks": {
-        "custom_html_hgJBeG": {
-          "type": "custom_html",
-          "settings": {
-            "html_custom": "<div class=\"text-center\" style=\"color: #111;\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M15.9566 6.05028C16.0087 6.21336 16.0139 6.38188 15.9722 6.55583C15.9305 6.72978 15.8419 6.87656 15.7065 6.99615L12.2206 10.1925L13.2523 14.9219C13.2835 15.0958 13.2679 15.2643 13.2054 15.4274C13.1533 15.5905 13.0595 15.7264 12.924 15.8351C12.7781 15.9438 12.6218 15.9982 12.4551 15.9982C12.2883 16.0091 12.132 15.971 11.9861 15.884L8 13.3889L4.0139 15.884C3.95137 15.9166 3.87842 15.9438 3.79505 15.9656C3.7221 15.9873 3.64915 15.9982 3.57621 15.9982C3.49284 15.9982 3.40426 15.9819 3.31046 15.9493C3.2271 15.9275 3.14894 15.8895 3.07599 15.8351C2.94051 15.7264 2.84151 15.5905 2.77898 15.4274C2.72688 15.2643 2.71646 15.0958 2.74772 14.9219L3.77942 10.1925L0.29353 6.99615C0.158055 6.87656 0.0694746 6.72978 0.0277898 6.55583C-0.0138949 6.38188 -0.00868433 6.21336 0.0434216 6.05028C0.0955276 5.87633 0.184108 5.73499 0.309162 5.62627C0.444637 5.51755 0.595745 5.45232 0.762484 5.43058L5.38949 5.00657L7.21841 0.538165C7.28094 0.375085 7.38515 0.244621 7.53105 0.146772C7.67694 0.0489241 7.83326 0 8 0C8.16674 0 8.32306 0.0489241 8.46895 0.146772C8.61485 0.244621 8.71906 0.375085 8.78159 0.538165L10.6105 5.00657L15.2375 5.43058C15.4043 5.45232 15.5502 5.51755 15.6752 5.62627C15.8107 5.73499 15.9045 5.87633 15.9566 6.05028Z\" fill=\"#F3FC81\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M15.9566 6.05028C16.0087 6.21336 16.0139 6.38188 15.9722 6.55583C15.9305 6.72978 15.8419 6.87656 15.7065 6.99615L12.2206 10.1925L13.2523 14.9219C13.2835 15.0958 13.2679 15.2643 13.2054 15.4274C13.1533 15.5905 13.0595 15.7264 12.924 15.8351C12.7781 15.9438 12.6218 15.9982 12.4551 15.9982C12.2883 16.0091 12.132 15.971 11.9861 15.884L8 13.3889L4.0139 15.884C3.95137 15.9166 3.87842 15.9438 3.79505 15.9656C3.7221 15.9873 3.64915 15.9982 3.57621 15.9982C3.49284 15.9982 3.40426 15.9819 3.31046 15.9493C3.2271 15.9275 3.14894 15.8895 3.07599 15.8351C2.94051 15.7264 2.84151 15.5905 2.77898 15.4274C2.72688 15.2643 2.71646 15.0958 2.74772 14.9219L3.77942 10.1925L0.29353 6.99615C0.158055 6.87656 0.0694746 6.72978 0.0277898 6.55583C-0.0138949 6.38188 -0.00868433 6.21336 0.0434216 6.05028C0.0955276 5.87633 0.184108 5.73499 0.309162 5.62627C0.444637 5.51755 0.595745 5.45232 0.762484 5.43058L5.38949 5.00657L7.21841 0.538165C7.28094 0.375085 7.38515 0.244621 7.53105 0.146772C7.67694 0.0489241 7.83326 0 8 0C8.16674 0 8.32306 0.0489241 8.46895 0.146772C8.61485 0.244621 8.71906 0.375085 8.78159 0.538165L10.6105 5.00657L15.2375 5.43058C15.4043 5.45232 15.5502 5.51755 15.6752 5.62627C15.8107 5.73499 15.9045 5.87633 15.9566 6.05028Z\" fill=\"#F3FC81\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M15.9566 6.05028C16.0087 6.21336 16.0139 6.38188 15.9722 6.55583C15.9305 6.72978 15.8419 6.87656 15.7065 6.99615L12.2206 10.1925L13.2523 14.9219C13.2835 15.0958 13.2679 15.2643 13.2054 15.4274C13.1533 15.5905 13.0595 15.7264 12.924 15.8351C12.7781 15.9438 12.6218 15.9982 12.4551 15.9982C12.2883 16.0091 12.132 15.971 11.9861 15.884L8 13.3889L4.0139 15.884C3.95137 15.9166 3.87842 15.9438 3.79505 15.9656C3.7221 15.9873 3.64915 15.9982 3.57621 15.9982C3.49284 15.9982 3.40426 15.9819 3.31046 15.9493C3.2271 15.9275 3.14894 15.8895 3.07599 15.8351C2.94051 15.7264 2.84151 15.5905 2.77898 15.4274C2.72688 15.2643 2.71646 15.0958 2.74772 14.9219L3.77942 10.1925L0.29353 6.99615C0.158055 6.87656 0.0694746 6.72978 0.0277898 6.55583C-0.0138949 6.38188 -0.00868433 6.21336 0.0434216 6.05028C0.0955276 5.87633 0.184108 5.73499 0.309162 5.62627C0.444637 5.51755 0.595745 5.45232 0.762484 5.43058L5.38949 5.00657L7.21841 0.538165C7.28094 0.375085 7.38515 0.244621 7.53105 0.146772C7.67694 0.0489241 7.83326 0 8 0C8.16674 0 8.32306 0.0489241 8.46895 0.146772C8.61485 0.244621 8.71906 0.375085 8.78159 0.538165L10.6105 5.00657L15.2375 5.43058C15.4043 5.45232 15.5502 5.51755 15.6752 5.62627C15.8107 5.73499 15.9045 5.87633 15.9566 6.05028Z\" fill=\"#F3FC81\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M15.9566 6.05028C16.0087 6.21336 16.0139 6.38188 15.9722 6.55583C15.9305 6.72978 15.8419 6.87656 15.7065 6.99615L12.2206 10.1925L13.2523 14.9219C13.2835 15.0958 13.2679 15.2643 13.2054 15.4274C13.1533 15.5905 13.0595 15.7264 12.924 15.8351C12.7781 15.9438 12.6218 15.9982 12.4551 15.9982C12.2883 16.0091 12.132 15.971 11.9861 15.884L8 13.3889L4.0139 15.884C3.95137 15.9166 3.87842 15.9438 3.79505 15.9656C3.7221 15.9873 3.64915 15.9982 3.57621 15.9982C3.49284 15.9982 3.40426 15.9819 3.31046 15.9493C3.2271 15.9275 3.14894 15.8895 3.07599 15.8351C2.94051 15.7264 2.84151 15.5905 2.77898 15.4274C2.72688 15.2643 2.71646 15.0958 2.74772 14.9219L3.77942 10.1925L0.29353 6.99615C0.158055 6.87656 0.0694746 6.72978 0.0277898 6.55583C-0.0138949 6.38188 -0.00868433 6.21336 0.0434216 6.05028C0.0955276 5.87633 0.184108 5.73499 0.309162 5.62627C0.444637 5.51755 0.595745 5.45232 0.762484 5.43058L5.38949 5.00657L7.21841 0.538165C7.28094 0.375085 7.38515 0.244621 7.53105 0.146772C7.67694 0.0489241 7.83326 0 8 0C8.16674 0 8.32306 0.0489241 8.46895 0.146772C8.61485 0.244621 8.71906 0.375085 8.78159 0.538165L10.6105 5.00657L15.2375 5.43058C15.4043 5.45232 15.5502 5.51755 15.6752 5.62627C15.8107 5.73499 15.9045 5.87633 15.9566 6.05028Z\" fill=\"#F3FC81\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M15.9566 6.05028C16.0087 6.21336 16.0139 6.38188 15.9722 6.55583C15.9305 6.72978 15.8419 6.87656 15.7065 6.99615L12.2206 10.1925L13.2523 14.9219C13.2835 15.0958 13.2679 15.2643 13.2054 15.4274C13.1533 15.5905 13.0595 15.7264 12.924 15.8351C12.7781 15.9438 12.6218 15.9982 12.4551 15.9982C12.2883 16.0091 12.132 15.971 11.9861 15.884L8 13.3889L4.0139 15.884C3.95137 15.9166 3.87842 15.9438 3.79505 15.9656C3.7221 15.9873 3.64915 15.9982 3.57621 15.9982C3.49284 15.9982 3.40426 15.9819 3.31046 15.9493C3.2271 15.9275 3.14894 15.8895 3.07599 15.8351C2.94051 15.7264 2.84151 15.5905 2.77898 15.4274C2.72688 15.2643 2.71646 15.0958 2.74772 14.9219L3.77942 10.1925L0.29353 6.99615C0.158055 6.87656 0.0694746 6.72978 0.0277898 6.55583C-0.0138949 6.38188 -0.00868433 6.21336 0.0434216 6.05028C0.0955276 5.87633 0.184108 5.73499 0.309162 5.62627C0.444637 5.51755 0.595745 5.45232 0.762484 5.43058L5.38949 5.00657L7.21841 0.538165C7.28094 0.375085 7.38515 0.244621 7.53105 0.146772C7.67694 0.0489241 7.83326 0 8 0C8.16674 0 8.32306 0.0489241 8.46895 0.146772C8.61485 0.244621 8.71906 0.375085 8.78159 0.538165L10.6105 5.00657L15.2375 5.43058C15.4043 5.45232 15.5502 5.51755 15.6752 5.62627C15.8107 5.73499 15.9045 5.87633 15.9566 6.05028Z\" fill=\"#F3FC81\"></path>\n</svg>\n</div>",
-            "spacing_bottom": 12
-          }
-        },
-        "description_NKGpBk": {
-          "type": "description",
-          "settings": {
-            "description": "<p><em>\" Milano will become an example of the responsible business model by doing business with kindness, profit and bringing practical and long—term values to customers, employees, partners, the community for the environment and for shareholders. \"</em></p>",
-            "font_size": 18,
-            "font_weight": "body_weight",
-            "spacing_bottom": 15
-          }
-        },
-        "subheading_RLCEF7": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Carie—Gosée Hera",
-            "font_size": 16,
-            "font_weight": "heading_weight",
-            "uppercase": false,
-            "spacing_bottom": 0
-          }
-        },
-        "description_jRcfa7": {
-          "type": "description",
-          "settings": {
-            "description": "<p>CEO and Founder Milano Store</p>",
-            "font_size": 14,
-            "font_weight": "body_weight",
-            "spacing_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "custom_html_hgJBeG",
-        "description_NKGpBk",
-        "subheading_RLCEF7",
-        "description_jRcfa7"
-      ],
-      "settings": {
-        "section_width": "container",
-        "color_scheme": "scheme-bb1431b0-be4a-4b03-a450-f572c07e3904",
-        "content_alignment": "center",
-        "content_max_width": 63,
-        "enable_expand_content": false,
-        "expand_content_button": "See all Information",
-        "padding_top": 80,
-        "padding_bottom": 70,
-        "reset_spacing": false
-      }
-    },
-    "multi_content_yUFjXW": {
-      "type": "multi-content",
-      "blocks": {
-        "image_DrDQzr": {
-          "type": "image",
-          "settings": {
-            "image_behavior": "none",
-            "image_link": "",
-            "content_width": "50%",
-            "vertical_align": "start"
-          }
-        },
-        "text_9rzjcF": {
-          "type": "text",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "content_width": "50%",
-            "vertical_align": "center",
-            "content_padding_block": 30,
-            "content_padding_inline": 30,
-            "image_link": "",
-            "subheading": "Our Factories",
-            "heading": "The Best Product",
-            "description": "<p>We spend a lot of time finding the best factories around the world—the same factories that make your favorite designer brands. We visit them regularly and build strong personal relationships with the owners. Each factory is audited for compliance to assess factors such as fair wages.</p>",
-            "timer": "",
-            "expired_message": "Time expired",
-            "style": "default",
-            "font_size": 36,
-            "spacing_bottom": 30,
-            "first_button_label": "Learn More",
-            "first_button_link": "shopify://collections/best-sellers",
-            "first_button_type": "primary",
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_type": "primary",
-            "content_alignment": "center",
-            "subheading_font_size": 15,
-            "subheading_font_weight": "heading_weight",
-            "subheading_spacing_bottom": 8,
-            "heading_font_size": 36,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 25,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 30
-          }
-        }
-      },
-      "block_order": [
-        "image_DrDQzr",
-        "text_9rzjcF"
-      ],
-      "settings": {
-        "section_width": "container",
-        "heading": "",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "column_gap": 30,
-        "content_background_color": "",
-        "equal_height_adjustment": false,
-        "carousel_on_mobile": false,
-        "items_per_row_mobile": 1,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
-    },
-    "multi_content_Phq6nD": {
-      "type": "multi-content",
-      "blocks": {
-        "text_4HeFjG": {
-          "type": "text",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "content_width": "50%",
-            "vertical_align": "center",
-            "content_padding_block": 30,
-            "content_padding_inline": 30,
-            "image_link": "",
-            "subheading": "Our Products",
-            "heading": "Timeless Products",
-            "description": "<p>At Milano, we’re not big on trends. We want you to wear our pieces for years, even decades, to come. That’s why we source the finest materials and factories for our timeless products— like our Grade-A cashmere sweaters, Italian shoes, <br/>and Peruvian Pima tees.</p>",
-            "timer": "",
-            "expired_message": "Time expired",
-            "style": "default",
-            "font_size": 36,
-            "spacing_bottom": 30,
-            "first_button_label": "Learn More",
-            "first_button_link": "shopify://collections/activewear",
-            "first_button_type": "primary",
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_type": "primary",
-            "content_alignment": "center",
-            "subheading_font_size": 15,
-            "subheading_font_weight": "heading_weight",
-            "subheading_spacing_bottom": 8,
-            "heading_font_size": 36,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 25,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 30
-          }
-        },
-        "image_cMzQ9f": {
-          "type": "image",
-          "settings": {
-            "image_behavior": "none",
-            "image_link": "",
-            "content_width": "50%",
-            "vertical_align": "start"
-          }
-        }
-      },
-      "block_order": [
-        "text_4HeFjG",
-        "image_cMzQ9f"
-      ],
-      "settings": {
-        "section_width": "container",
-        "heading": "",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "column_gap": 30,
-        "content_background_color": "",
-        "equal_height_adjustment": false,
-        "carousel_on_mobile": false,
-        "items_per_row_mobile": 1,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
-    },
-    "divider_TAXJn3": {
-      "type": "divider",
-      "settings": {
-        "section_width": "container",
-        "border_height": 1,
-        "border_color": "#ebebeb",
-        "reset_spacing": false
-      }
-    },
-    "rich_text_ej4aJ8": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_jyxhWF": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "How We Work",
-            "font_size": 15,
-            "font_weight": "heading_weight",
-            "uppercase": false,
-            "spacing_bottom": 3
-          }
-        },
-        "heading_NxNJtH": {
-          "type": "heading",
-          "settings": {
-            "heading": "Expanding Horizons",
-            "font_size": 36,
-            "font_weight": "heading_weight",
-            "uppercase": false,
-            "spacing_bottom": 10
-          }
-        },
-        "description_3VEKaL": {
-          "type": "description",
-          "settings": {
-            "description": "<p>At Milano, our work culture is deeply rooted in collaboration, innovation and passion. We believe that a positive and inclusive work environment is the foundation for creativity and success.</p>",
-            "font_size": 15,
-            "font_weight": "body_weight",
-            "spacing_bottom": 10
-          }
-        }
-      },
-      "block_order": [
-        "subheading_jyxhWF",
-        "heading_NxNJtH",
-        "description_3VEKaL"
-      ],
-      "settings": {
-        "section_width": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "content_max_width": 73,
-        "enable_expand_content": false,
-        "expand_content_button": "See all Information",
-        "padding_top": 0,
-        "padding_bottom": 22,
-        "reset_spacing": true
-      }
-    },
-    "multi_content_cnGW9D": {
-      "type": "multi-content",
-      "blocks": {
-        "image_with_text_below_re4BzW": {
-          "type": "image_with_text_below",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "content_width": "33.3333%",
-            "vertical_align": "start",
-            "image_behavior": "none",
-            "image_link": "",
-            "subheading": "",
-            "heading": "The Core of Us",
-            "description": "<p>Adipisicing elit sed do eiusmod tempor labore et dolore dignissimos cumque. Excepteur sint occaecat cupidatat proident.</p>",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_type": "link",
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_type": "primary",
-            "content_alignment": "center",
-            "spacing_top": 27,
-            "spacing_bottom": 0,
-            "content_padding_inline": 0,
-            "subheading_font_size": 13,
-            "subheading_font_weight": "subheading_weight",
-            "subheading_spacing_bottom": 15,
-            "heading_font_size": 18,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 10,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 0
-          }
-        },
-        "image_with_text_below_C7nCbK": {
-          "type": "image_with_text_below",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "content_width": "33.3333%",
-            "vertical_align": "start",
-            "image_behavior": "none",
-            "image_link": "",
-            "subheading": "",
-            "heading": "Our Products",
-            "description": "<p>Adipisicing elit sed do eiusmod tempor labore et dolore dignissimos cumque. Excepteur sint occaecat cupidatat proident.</p>",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_type": "link",
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_type": "primary",
-            "content_alignment": "center",
-            "spacing_top": 27,
-            "spacing_bottom": 0,
-            "content_padding_inline": 0,
-            "subheading_font_size": 12,
-            "subheading_font_weight": "subheading_weight",
-            "subheading_spacing_bottom": 15,
-            "heading_font_size": 18,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 10,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 0
-          }
-        },
-        "image_with_text_below_Nyqy46": {
-          "type": "image_with_text_below",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "content_width": "33.3333%",
-            "vertical_align": "start",
-            "image_behavior": "none",
-            "image_link": "",
-            "subheading": "",
-            "heading": "Our Careers",
-            "description": "<p>Adipisicing elit sed do eiusmod tempor labore et dolore dignissimos cumque. Excepteur sint occaecat cupidatat proident.</p>",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_type": "link",
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_type": "primary",
-            "content_alignment": "center",
-            "spacing_top": 27,
-            "spacing_bottom": 0,
-            "content_padding_inline": 0,
-            "subheading_font_size": 12,
-            "subheading_font_weight": "subheading_weight",
-            "subheading_spacing_bottom": 15,
-            "heading_font_size": 18,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 10,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_with_text_below_re4BzW",
-        "image_with_text_below_C7nCbK",
-        "image_with_text_below_Nyqy46"
-      ],
-      "settings": {
-        "section_width": "container",
-        "heading": "",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "column_gap": 30,
-        "content_background_color": "",
-        "equal_height_adjustment": false,
-        "carousel_on_mobile": false,
-        "items_per_row_mobile": 1,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
     }
   },
   "order": [
@@ -745,13 +321,6 @@
     "multi_content_mBYATd",
     "counter_bjDJxc",
     "divider_jTBGQJ",
-    "rich_text_td9KN9",
-    "multi_content_VbbiBa",
-    "rich_text_yjfBc8",
-    "multi_content_yUFjXW",
-    "multi_content_Phq6nD",
-    "divider_TAXJn3",
-    "rich_text_ej4aJ8",
-    "multi_content_cnGW9D"
+    "multi_content_VbbiBa"
   ]
 }
