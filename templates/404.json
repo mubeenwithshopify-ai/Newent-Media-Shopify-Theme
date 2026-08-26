@@ -23,9 +23,7 @@
       "blocks": {
         "image_VQTRFT": {
           "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/img_4.jpg"
-          }
+          "settings": {}
         },
         "heading_6nj4md": {
           "type": "heading",
@@ -40,7 +38,7 @@
         "subheading_yFdKEQ": {
           "type": "subheading",
           "settings": {
-            "subheading": "Sorry for the inconvenience. Go to our homepage or check out our latest collections.",
+            "subheading": "Sorry for the inconvenience. Check out our latest collections.",
             "font_size": 15,
             "font_weight": "body_weight",
             "uppercase": false,
@@ -50,8 +48,8 @@
         "button_4yrfiE": {
           "type": "button",
           "settings": {
-            "first_button_label": "Back to Homepage",
-            "first_button_link": "https://demo-milano.myshopify.com/",
+            "first_button_label": "Back to Shopping",
+            "first_button_link": "shopify://collections/all",
             "open_link": false,
             "first_button_type": "primary",
             "spacing_bottom": 0
@@ -72,5 +70,8 @@
       }
     }
   },
-  "order": ["divider_zDJB6F", "main"]
+  "order": [
+    "divider_zDJB6F",
+    "main"
+  ]
 }
