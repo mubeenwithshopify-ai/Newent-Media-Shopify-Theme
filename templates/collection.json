@@ -81,39 +81,13 @@
     "main": {
       "type": "main-collection-product",
       "blocks": {
-        "categories_LYDr6p": {
-          "type": "categories",
-          "settings": {
-            "title": "Products Category",
-            "menu": "collection-top"
-          }
-        },
         "filter_giBtHK": {
           "type": "filter",
           "settings": {}
-        },
-        "popular_product_Xwjqcf": {
-          "type": "popular_product",
-          "settings": {
-            "title": "Featured product",
-            "collection": "t-shirts",
-            "items_to_show": 3
-          }
-        },
-        "image_banner_UUJxtT": {
-          "type": "image_banner",
-          "settings": {
-            "image": "shopify://shop_images/fs_category.jpg",
-            "url": "shopify://collections",
-            "open_link": true
-          }
         }
       },
       "block_order": [
-        "categories_LYDr6p",
-        "filter_giBtHK",
-        "popular_product_Xwjqcf",
-        "image_banner_UUJxtT"
+        "filter_giBtHK"
       ],
       "settings": {
         "section_width": "fluid_container",
