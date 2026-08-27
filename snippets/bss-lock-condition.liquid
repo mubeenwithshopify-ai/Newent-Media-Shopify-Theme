@@ -91,7 +91,7 @@
 
         
     			{% unless trial_expired %}{% if current_scope == resource_type_product %}
-    				{% unless template == 'index' or template == 'customers/reset_password' or template == 'customers/register' or template == 'customers/activate_account' or template == 'wholesaler' or template == 'customers/account' or template == 'customers/addresses' or template == 'customers/login' or template == 'customers/order' or content_for_layout contains 'bss-b2b-registration-form' or page_url_with_params contains '/policies' or request.path == "/challenge" %}
+    				{% unless template == 'customers/reset_password' or template == 'customers/register' or template == 'customers/activate_account' or template == 'wholesaler' or template == 'customers/account' or template == 'customers/addresses' or template == 'customers/login' or template == 'customers/order' or content_for_layout contains 'bss-b2b-registration-form' or page_url_with_params contains '/policies' or request.path == "/challenge" %}
     					{% assign isExcluded = false %}{% unless isExcluded  or lock_ids != opened_lock_ids %}
     						{% assign lock_ids = lock_ids | append: ',14054,' %}
                         
