@@ -46,7 +46,7 @@
         "show_mobile": true,
         "show_separator_line": false,
         "uppercase": false,
-        "font_size": 13,
+        "font_size": 16,
         "font_weight": "body_weight",
         "padding_top": 9,
         "padding_bottom": 9
