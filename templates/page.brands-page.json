@@ -139,11 +139,79 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "1787919918e2a4101b": {
+      "type": "apps",
+      "blocks": {
+        "easy_brand_page_brand_page_ypNmY8": {
+          "type": "shopify://apps/easy-brand-page/blocks/brand-page/019c862d-f441-79c1-9fde-0dc9ccec7f8e",
+          "settings": {
+            "layout_preset": "classic-cards",
+            "list_rows_columns": "1",
+            "index_rows_columns": "3",
+            "letter_columns_count": "4",
+            "show_favorites": true,
+            "fav_layout_preset": "image-cards",
+            "fav_container": true,
+            "favorites_heading": "Featured Brands",
+            "fav_position": "above",
+            "fav_always_show": false,
+            "fav_show_images": false,
+            "fav_image_only": false,
+            "fav_heading_size_px": 18,
+            "fav_columns": "4",
+            "fav_columns_mobile": "2",
+            "show_search": true,
+            "show_az": true,
+            "show_images": false,
+            "image_only": false,
+            "show_product_counts": true,
+            "card_style": "soft",
+            "spacing_density": "comfortable",
+            "typography_scale": "normal",
+            "name_color": "",
+            "card_bg_color": "",
+            "name_size_px": 13,
+            "filter_accent_color": "",
+            "filter_shape": "default",
+            "show_heading": true,
+            "heading": "Brands",
+            "heading_size_px": 36,
+            "heading_color": "",
+            "search_align": "right",
+            "search_placeholder": "Search brands…",
+            "show_tag_pills": true,
+            "tag_all_label": "All",
+            "filter_tag": "",
+            "az_size": "normal",
+            "letter_size_px": 13,
+            "letter_color": "",
+            "gray_empty_letters": false,
+            "columns": "4",
+            "columns_mobile": "2",
+            "padding_top": 48,
+            "padding_bottom": 64,
+            "padding_sides": 0,
+            "custom_mobile_padding": false,
+            "padding_top_mobile": 32,
+            "padding_bottom_mobile": 48,
+            "padding_sides_mobile": 0,
+            "limit_content_width": false,
+            "content_max_width": 1200,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "easy_brand_page_brand_page_ypNmY8"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "image_with_text_overlay_zfdrhM",
     "main",
-    "collection_list_DQPrBp"
+    "collection_list_DQPrBp",
+    "1787919918e2a4101b"
   ]
 }
