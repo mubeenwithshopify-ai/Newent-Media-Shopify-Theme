@@ -18,8 +18,8 @@
           "type": "store_info",
           "settings": {
             "image_width": 100,
-            "store_heading": "About us",
-            "store_description": "<p>We only carry designs we believe in ethically and <br/>aesthetically – original, authentic pieces that are made to last.<br/> <a href=\"/pages/about-us\" title=\"About us\"><span style=\"text-decoration:underline\"><strong>Learn more</strong></span></a></p>",
+            "store_heading": "NEWENT MEDIA",
+            "store_description": "<p>Your trusted wholesale partner for premium vinyl distribution. We supply independent record stores across the US with curated LPs, limited editions, and music accessories — backed by reliable fulfillment and dedicated account support.</p><p><a href=\"/pages/about-us\" title=\"About Us\"><span style=\"text-decoration:underline\"><strong>Learn More About Us</strong></span></a></p>",
             "store_address": true,
             "store_phone": true,
             "store_email": true,
