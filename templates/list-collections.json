@@ -32,12 +32,12 @@
       ],
       "settings": {
         "section_width": "fluid_container",
-        "color_scheme": "",
+        "color_scheme": "scheme-2b5c6c91-201d-4fb1-aba3-e6d562656976",
         "alignment": "center",
         "overlay_opacity": 0,
-        "height": "adapt",
-        "padding_top": 67,
-        "padding_bottom": 0
+        "height": "based_on_content",
+        "padding_top": 70,
+        "padding_bottom": 70
       }
     },
     "main": {
