@@ -37,12 +37,13 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "",
+        "color_scheme": "scheme-3d10de96-a479-49bd-819c-e044746b4f3e",
         "alignment": "center",
-        "overlay_opacity": 0,
-        "height": "adapt",
-        "padding_top": 40,
-        "padding_bottom": 0
+        "background_image": "shopify://shop_images/newent-media-about-page.png",
+        "overlay_opacity": 65,
+        "height": "based_on_content",
+        "padding_top": 70,
+        "padding_bottom": 70
       }
     },
     "main": {
@@ -51,137 +52,137 @@
         "title_fipewL": {
           "type": "title",
           "settings": {
-            "title": "Shopping Information"
+            "title": "Account & Getting Started"
           }
         },
         "faq_ThHtgk": {
           "type": "faq",
           "settings": {
-            "question": "Pellentesque habitant morbi tristique senectus et netus?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "How do I apply for a wholesale account?",
+            "answer": "<p>Visit our Wholesale Application page and complete the registration form. Our team manually reviews all applications and you'll receive an approval or follow-up email within 2–3 business days. Only verified independent record stores and music retailers are eligible.</p>"
           }
         },
         "faq_Gicg7X": {
           "type": "faq",
           "settings": {
-            "question": "How much is shipping and how long will it take?",
-            "answer": "<p>The perfect way to enjoy brewing tea on low hanging fruit to identify. Duis autem vel eum iriure dolor in hendrerit vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. For me, the most important part of improving at photography has been sharing it. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+            "question": "What information do I need to apply?",
+            "answer": "<p>You'll need your business name, store address, resale or tax ID, and a brief description of your retail operation. Providing your website or social media links helps speed up approval.</p>"
           }
         },
         "faq_836jPJ": {
           "type": "faq",
           "settings": {
-            "question": "How long will it take to get my package?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "How long does account approval take?",
+            "answer": "<p>Most applications are reviewed within 2–3 business days. You'll receive an email notification once your account is approved, along with login credentials to access wholesale pricing.</p>"
           }
         },
         "faq_ia7ibM": {
           "type": "faq",
           "settings": {
-            "question": "Branding is simply a more efficient way to sell things?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Can I browse the catalog before my account is approved?",
+            "answer": "<p>Yes — our public catalog displays product titles and descriptions, but wholesale pricing is only visible after your account is approved and you're logged in.</p>"
           }
         },
         "title_gbHw88": {
           "type": "title",
           "settings": {
-            "title": "Payment Information"
+            "title": "Pricing & Payment"
           }
         },
         "faq_fFdf33": {
           "type": "faq",
           "settings": {
-            "question": "Pellentesque habitant morbi tristique senectus et netus?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "How does your tiered pricing work?",
+            "answer": "<p>NEWENT MEDIA offers four pricing tiers based on order volume and account type. Your tier is assigned at approval and reflected automatically at checkout. Contact your account manager to discuss tier upgrades or negotiated pricing.</p>"
           }
         },
         "faq_7zgeNX": {
           "type": "faq",
           "settings": {
-            "question": "How much is shipping and how long will it take?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Do you offer Net terms?",
+            "answer": "<p>Yes. Approved accounts may qualify for Net 15 or Net 30 payment terms. Terms are subject to account history and order volume. Contact us to request terms for your account.</p>"
           }
         },
         "faq_9x46hk": {
           "type": "faq",
           "settings": {
-            "question": "How long will it take to get my package?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "What payment methods do you accept?",
+            "answer": "<p>We accept all major credit cards, ACH bank transfers, and purchase orders (PO) for accounts with approved Net terms. PO numbers can be entered at checkout.</p>"
           }
         },
         "faq_3CHFF7": {
           "type": "faq",
           "settings": {
-            "question": "Branding is simply a more efficient way to sell things?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Are prices inclusive of taxes?",
+            "answer": "<p>Prices displayed are exclusive of applicable taxes. Tax-exempt retailers must submit a valid resale certificate during registration or to our team before placing orders.</p>"
           }
         },
         "title_bqPdEf": {
           "type": "title",
           "settings": {
-            "title": "Order & Returns"
+            "title": "Orders & Shipping"
           }
         },
         "faq_Yk6NFT": {
           "type": "faq",
           "settings": {
-            "question": "Pellentesque habitant morbi tristique senectus et netus?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Is there a minimum order quantity (MOQ)?",
+            "answer": "<p>Yes, minimum order requirements vary by product category. Vinyl LPs are typically sold in case packs. MOQs are displayed on each product page and enforced at checkout.</p>"
           }
         },
         "faq_4M7pba": {
           "type": "faq",
           "settings": {
-            "question": "How much is shipping and how long will it take?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "How long does order fulfillment take?",
+            "answer": "<p>In-stock orders are typically processed and shipped within 1–2 business days. Preorder items will ship on or after the listed release date. You'll receive a shipping confirmation with tracking once your order dispatches.</p>"
           }
         },
         "faq_kAVH4d": {
           "type": "faq",
           "settings": {
-            "question": "How long will it take to get my package?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "What shipping carriers do you use?",
+            "answer": "<p>We ship via UPS, FedEx, and USPS depending on order size and destination. Freight shipping is available for large volume orders — contact us for a freight quote before placing your order.</p>"
           }
         },
         "faq_YnHLzc": {
           "type": "faq",
           "settings": {
-            "question": "Branding is simply a more efficient way to sell things?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Do you ship internationally?",
+            "answer": "<p>Currently, NEWENT MEDIA ships within the United States only. International wholesale inquiries can be directed to our team for evaluation on a case-by-case basis.</p>"
           }
         },
         "title_WyfxtT": {
           "type": "title",
           "settings": {
-            "title": "Ordering from Umino"
+            "title": "Returns & Support"
           }
         },
         "faq_ihTetD": {
           "type": "faq",
           "settings": {
-            "question": "Pellentesque habitant morbi tristique senectus et netus?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "What is your return policy for wholesale orders?",
+            "answer": "<p>We accept returns on defective or damaged items only. Claims must be submitted within 7 days of delivery with photo documentation. We do not accept returns on opened or played vinyl.</p>"
           }
         },
         "faq_efgqCe": {
           "type": "faq",
           "settings": {
-            "question": "How much is shipping and how long will it take?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "What if I receive a damaged shipment?",
+            "answer": "<p>Please document the damage with photos immediately upon receipt and contact our wholesale team within 48 hours. We'll arrange a replacement or credit for confirmed damage claims.</p>"
           }
         },
         "faq_L3TytR": {
           "type": "faq",
           "settings": {
-            "question": "How long will it take to get my package?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "How do I reorder or place a repeat order quickly?",
+            "answer": "<p>Logged-in wholesale accounts can use the Quick Order feature to reorder from your order history, or browse the catalog and add case packs directly to your cart.</p>"
           }
         },
         "faq_YHU93w": {
           "type": "faq",
           "settings": {
-            "question": "Branding is simply a more efficient way to sell things?",
-            "answer": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>"
+            "question": "Who do I contact if I have an issue with my account or order?",
+            "answer": "<p>Reach out via our Contact page or email your assigned account manager directly. Our wholesale support team operates Monday–Friday, 9AM–5PM EST, and aims to respond within 1 business day.</p>"
           }
         }
       },
@@ -209,12 +210,12 @@
       ],
       "settings": {
         "section_width": "container",
-        "heading": "Contact Us",
-        "description": "<p>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.</p><p>Please allow 3 - 5 business days from the time your package arrives back to us for a refund to be issued. </p>",
+        "heading": "Need Help? Contact Us",
+        "description": "<p>Have questions about your wholesale account, pricing tiers, or an existing order? Our wholesale team is available Monday–Friday, 9AM–5PM EST. Reach out and we'll get back to you within 1 business day.</p>",
         "first_button_label": "Contact Us",
         "first_button_link": "shopify://pages/contact",
         "first_button_type": "outline",
-        "second_button_label": "About us",
+        "second_button_label": "Apply for Wholesale",
         "second_button_link": "shopify://pages/about-us",
         "second_button_type": "primary",
         "padding_top": 0,
