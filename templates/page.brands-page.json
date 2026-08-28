@@ -74,24 +74,24 @@
     "collection_list_DQPrBp": {
       "type": "collection-list",
       "blocks": {
-        "collection_KkQpJm": {
+        "collection_E6BWyL": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "vinylica",
             "collection_title": ""
           }
         },
         "collection_ayeW7Y": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "vinylora",
             "collection_title": ""
           }
         },
-        "collection_E6BWyL": {
+        "collection_KkQpJm": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "new-entertainment",
             "collection_title": ""
           }
         },
@@ -104,25 +104,25 @@
         }
       },
       "block_order": [
-        "collection_KkQpJm",
-        "collection_ayeW7Y",
         "collection_E6BWyL",
+        "collection_ayeW7Y",
+        "collection_KkQpJm",
         "collection_HN4Kmw"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "heading": "Collection list",
+        "heading": "",
         "description": "",
         "show_view_all_button": false,
         "header_size": "medium",
-        "header_alignment": "left",
+        "header_alignment": "center",
         "display_mode": "carousel",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "custom_ratio": "",
-        "items_per_row": 4,
-        "column_gap": 30,
+        "items_per_row": 3,
+        "column_gap": 20,
         "collection_information_position": "overlay_image",
         "design": "default",
         "text_alignment": "center",
