@@ -1,6 +1,256 @@
+{% doc %}
+  @prompt
+    A heading with an animated glowing effect
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-glow-heading-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    text-align: {{ block.settings.text_alignment }};
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_horizontal }}px;
+  }
+
+  .ai-glow-heading__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    text-shadow: 
+      0 0 {{ block.settings.glow_blur }}px {{ block.settings.glow_color }},
+      0 0 {{ block.settings.glow_blur | times: 1.5 }}px {{ block.settings.glow_color }},
+      0 0 {{ block.settings.glow_blur | times: 2 }}px {{ block.settings.glow_color }};
+    animation: ai-glow-pulse-{{ ai_gen_id }} {{ block.settings.animation_speed }}s ease-in-out infinite;
+  }
+
+  @keyframes ai-glow-pulse-{{ ai_gen_id }} {
+    0%, 100% {
+      text-shadow: 
+        0 0 {{ block.settings.glow_blur }}px {{ block.settings.glow_color }},
+        0 0 {{ block.settings.glow_blur | times: 1.5 }}px {{ block.settings.glow_color }},
+        0 0 {{ block.settings.glow_blur | times: 2 }}px {{ block.settings.glow_color }};
+      opacity: {{ block.settings.min_opacity }};
+    }
+    50% {
+      text-shadow: 
+        0 0 {{ block.settings.glow_blur | times: 1.5 }}px {{ block.settings.glow_color }},
+        0 0 {{ block.settings.glow_blur | times: 2 }}px {{ block.settings.glow_color }},
+        0 0 {{ block.settings.glow_blur | times: 3 }}px {{ block.settings.glow_color }};
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-glow-heading__text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.7);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-glow-heading-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading_tag == 'h1' %}
+    <h1 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h1>
+  {% elsif block.settings.heading_tag == 'h2' %}
+    <h2 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h2>
+  {% elsif block.settings.heading_tag == 'h3' %}
+    <h3 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h3>
+  {% elsif block.settings.heading_tag == 'h4' %}
+    <h4 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h4>
+  {% elsif block.settings.heading_tag == 'h5' %}
+    <h5 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h5>
+  {% else %}
+    <h6 class="ai-glow-heading__text-{{ ai_gen_id }}">{{ block.settings.heading_text }}</h6>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Glowing heading",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text",
+      "default": "Premium Vinyl Records"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "font_weight",
+      "label": "Font weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Glow effect"
+    },
+    {
+      "type": "color",
+      "id": "glow_color",
+      "label": "Glow color",
+      "default": "#355683"
+    },
+    {
+      "type": "range",
+      "id": "glow_blur",
+      "label": "Glow intensity",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Animation speed",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "min_opacity",
+      "label": "Minimum opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Glowing heading"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
