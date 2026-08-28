@@ -35,7 +35,6 @@
           assign phone = block_st.phone | default: 'Phone Number'
           assign company = block_st.company | default: 'Business / Company Name'
           assign subject = block_st.subject | default: 'Select a subject / concern'
-          assign subject_options = block_st.subject_options | default: 'General Inquiry,Wholesale Inquiry,Product Inquiry,Order Support,Partnership Opportunity,Other'
           assign button_label = block_st.button_label | default: 'Send'
           assign show_privacy = block_st.show_privacy
           assign heading = block_st.heading
@@ -68,58 +67,57 @@
                 {% else %}
                   {{ form.errors | default_errors }}
                 {% endif %}
-                <div
-                  class="flex flex-cols flex-wrap gap-20"
-                  style="
-                    --col-number: 1;
-                    --col-desktop: 2;
-                  "
-                >
-                  <div class="full-name flex-1">
-                    <input
-                      type="text"
-                      class="form-input form-input-placeholder w-full"
-                      name="contact[name]"
-                      {% if form.name %}
-                        value="{{ form.name }}"
-                      {% elsif customer %}
-                        value="{{ customer.name }}"
-                      {% endif %}
-                      id="inputName"
-                      required
-                      placeholder="{{ name }}"
-                    >
+                <div class="contact-form-fields">
+                  <div class="contact-form-fields__grid">
+                    <div class="full-name">
+                      <input
+                        type="text"
+                        class="form-input form-input-placeholder w-full"
+                        name="contact[name]"
+                        {% if form.name %}
+                          value="{{ form.name }}"
+                        {% elsif customer %}
+                          value="{{ customer.name }}"
+                        {% endif %}
+                        id="inputName"
+                        required
+                        placeholder="{{ name }}"
+                      >
+                    </div>
+
+                    <div class="email">
+                      <input
+                        type="email"
+                        name="contact[email]"
+                        placeholder="{{ email }}"
+                        class="form-input form-input-placeholder w-full"
+                        id="email"
+                        required
+                      >
+                    </div>
+
+                    <div class="phone">
+                      <input
+                        type="tel"
+                        name="contact[Phone]"
+                        placeholder="{{ phone }}"
+                        class="form-input form-input-placeholder w-full"
+                        id="phone"
+                      >
+                    </div>
+
+                    <div class="company">
+                      <input
+                        type="text"
+                        name="contact[Business / Company Name]"
+                        placeholder="{{ company }}"
+                        class="form-input form-input-placeholder w-full"
+                        id="company"
+                      >
+                    </div>
                   </div>
-                  <div class="email flex-1">
-                    <input
-                      type="email"
-                      name="contact[email]"
-                      placeholder="{{  email }}"
-                      class="form-input form-input-placeholder w-full"
-                      id="email"
-                      required
-                    >
-                  </div>
-                </div>
-                  <div class="phone flex-1">
-                    <input
-                      type="tel"
-                      name="contact[Phone]"
-                      placeholder="{{ phone }}"
-                      class="form-input form-input-placeholder w-full"
-                      id="phone"
-                    >
-                  </div>
-                  <div class="company flex-1">
-                    <input
-                      type="text"
-                      name="contact[Business / Company Name]"
-                      placeholder="{{ company }}"
-                      class="form-input form-input-placeholder w-full"
-                      id="company"
-                    >
-                  </div>
-                  <div class="subject flex-1">
+
+                  <div class="subject">
                     <select
                       name="contact[Subject / Concern]"
                       class="form-input form-input-placeholder w-full"
@@ -127,23 +125,22 @@
                       required
                     >
                       <option value="" selected disabled>{{ subject }}</option>
-                      {% assign subject_options_normalized = subject_options | newline_to_br: '<br>' | replace: '<br>', ',' %}
-                      {% assign subject_option_list = subject_options_normalized | split: ',' %}
-                      {% for option in subject_option_list %}
-                        {% assign option_value = option | strip %}
-                        {% if option_value != blank %}
-                          <option value="{{ option_value | escape }}">{{ option_value }}</option>
-                        {% endif %}
-                      {% endfor %}
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Wholesale Inquiry">Wholesale Inquiry</option>
+                      <option value="Product Inquiry">Product Inquiry</option>
+                      <option value="Order Support">Order Support</option>
+                      <option value="Partnership Opportunity">Partnership Opportunity</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
+
+                  <textarea
+                    class="w-full"
+                    name="contact[body]"
+                    placeholder="{{ your_comment }}"
+                    id="message"
+                  ></textarea>
                 </div>
-                <textarea
-                  class="w-full"
-                  name="contact[body]"
-                  placeholder="{{ your_comment }}"
-                  id="message"
-                ></textarea>
 
                 <div class="form_action">
                   {% if show_privacy %}
@@ -191,6 +188,38 @@
     </div>
   </div>
 </div>
+<style>
+  .contact-us .contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-us .contact-form-fields__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+
+  .contact-us .contact-form-fields input,
+  .contact-us .contact-form-fields select,
+  .contact-us .contact-form-fields textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-us .contact-form-fields select {
+    min-height: 48px;
+  }
+
+  @media (max-width: 749px) {
+    .contact-us .contact-form-fields__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
+
 <script src="{{ 'contact.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
@@ -326,13 +355,6 @@
           "id": "subject",
           "label": "Subject / concern placeholder",
           "default": "Select a subject / concern"
-        },
-        {
-          "type": "textarea",
-          "id": "subject_options",
-          "label": "Subject / concern options",
-          "info": "Enter one option per line or separate options with commas.",
-          "default": "General Inquiry\nWholesale Inquiry\nProduct Inquiry\nOrder Support\nPartnership Opportunity\nOther"
         },
         {
           "type": "text",
