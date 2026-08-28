@@ -523,7 +523,11 @@
         "settings": {
           "greeting_message": "",
           "show_featured_products": true,
-          "featured_products": [],
+          "featured_products": [
+            "analog-dreams-vol-1-static-bloom",
+            "desert-frequency-cactus-radio",
+            "ember-frost-the-hollow-pines"
+          ],
           "background_color": "#FFFFFF",
           "font_color": "#444444",
           "agent_invert_activator_colors": false,
