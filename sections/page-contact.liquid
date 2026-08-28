@@ -32,6 +32,10 @@
           assign name = block_st.name | default: 'Your Name'
           assign email = block_st.email | default: 'Your Email'
           assign your_comment = block_st.your_comment | default: 'Enter please your message'
+          assign phone = block_st.phone | default: 'Phone Number'
+          assign company = block_st.company | default: 'Business / Company Name'
+          assign subject = block_st.subject | default: 'Select a subject / concern'
+          assign subject_options = block_st.subject_options | default: 'General Inquiry,Wholesale Inquiry,Product Inquiry,Order Support,Partnership Opportunity,Other'
           assign button_label = block_st.button_label | default: 'Send'
           assign show_privacy = block_st.show_privacy
           assign heading = block_st.heading
@@ -95,6 +99,43 @@
                       id="email"
                       required
                     >
+                  </div>
+                </div>
+                  <div class="phone flex-1">
+                    <input
+                      type="tel"
+                      name="contact[Phone]"
+                      placeholder="{{ phone }}"
+                      class="form-input form-input-placeholder w-full"
+                      id="phone"
+                    >
+                  </div>
+                  <div class="company flex-1">
+                    <input
+                      type="text"
+                      name="contact[Business / Company Name]"
+                      placeholder="{{ company }}"
+                      class="form-input form-input-placeholder w-full"
+                      id="company"
+                    >
+                  </div>
+                  <div class="subject flex-1">
+                    <select
+                      name="contact[Subject / Concern]"
+                      class="form-input form-input-placeholder w-full"
+                      id="subject"
+                      required
+                    >
+                      <option value="" selected disabled>{{ subject }}</option>
+                      {% assign subject_options_normalized = subject_options | newline_to_br: '<br>' | replace: '<br>', ',' %}
+                      {% assign subject_option_list = subject_options_normalized | split: ',' %}
+                      {% for option in subject_option_list %}
+                        {% assign option_value = option | strip %}
+                        {% if option_value != blank %}
+                          <option value="{{ option_value | escape }}">{{ option_value }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
                   </div>
                 </div>
                 <textarea
@@ -267,6 +308,31 @@
           "type": "text",
           "id": "email",
           "label": "t:sections.contact.block.contact.settings.email.label"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone field placeholder",
+          "default": "Phone Number"
+        },
+        {
+          "type": "text",
+          "id": "company",
+          "label": "Business / company field placeholder",
+          "default": "Business / Company Name"
+        },
+        {
+          "type": "text",
+          "id": "subject",
+          "label": "Subject / concern placeholder",
+          "default": "Select a subject / concern"
+        },
+        {
+          "type": "textarea",
+          "id": "subject_options",
+          "label": "Subject / concern options",
+          "info": "Enter one option per line or separate options with commas.",
+          "default": "General Inquiry\nWholesale Inquiry\nProduct Inquiry\nOrder Support\nPartnership Opportunity\nOther"
         },
         {
           "type": "text",
