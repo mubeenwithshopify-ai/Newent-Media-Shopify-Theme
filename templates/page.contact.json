@@ -87,10 +87,15 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "17878958368ad042dd": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
     "page-heading",
-    "main"
+    "main",
+    "17878958368ad042dd"
   ]
 }
