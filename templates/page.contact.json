@@ -124,7 +124,7 @@
           "type": "contact",
           "settings": {
             "heading": "",
-            "description": "",
+            "description": "<p>Fill in the form below and we'll get back to you as soon as possible.</p>",
             "show_privacy": false,
             "name": "Your name",
             "email": "",
