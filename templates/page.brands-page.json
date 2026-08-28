@@ -71,82 +71,13 @@
         "padding_bottom": 0
       }
     },
-    "collection_list_DQPrBp": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_E6BWyL": {
-          "type": "collection",
-          "settings": {
-            "collection": "vinylica",
-            "collection_title": ""
-          }
-        },
-        "collection_ayeW7Y": {
-          "type": "collection",
-          "settings": {
-            "collection": "vinylora",
-            "collection_title": ""
-          }
-        },
-        "collection_KkQpJm": {
-          "type": "collection",
-          "settings": {
-            "collection": "new-entertainment",
-            "collection_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_E6BWyL",
-        "collection_ayeW7Y",
-        "collection_KkQpJm"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "heading": "",
-        "description": "",
-        "show_view_all_button": false,
-        "header_size": "medium",
-        "header_alignment": "center",
-        "display_mode": "carousel",
-        "image_ratio": "square",
-        "custom_ratio": "",
-        "items_per_row": 4,
-        "column_gap": 20,
-        "collection_information_position": "overlay_image",
-        "design": "futuristic",
-        "text_alignment": "center",
-        "show_product_count": false,
-        "show_description": false,
-        "font_size": 16,
-        "font_weight": "heading_weight",
-        "information_spacing": 12,
-        "rounded_image": false,
-        "image_custom_width": false,
-        "image_width": 200,
-        "show_arrow": false,
-        "carousel_pagination": "disable",
-        "infinite": false,
-        "autoplay": false,
-        "autorotate_speed": 5,
-        "reveal": false,
-        "items_per_row_mobile": 1,
-        "speed": 30,
-        "img_width": 300,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
-    },
     "1787919918e2a4101b": {
       "type": "apps",
       "blocks": {
         "easy_brand_page_brand_page_ypNmY8": {
           "type": "shopify://apps/easy-brand-page/blocks/brand-page/019c862d-f441-79c1-9fde-0dc9ccec7f8e",
           "settings": {
-            "layout_preset": "classic-cards",
+            "layout_preset": "image-cards",
             "list_rows_columns": "1",
             "index_rows_columns": "3",
             "letter_columns_count": "4",
@@ -158,10 +89,10 @@
             "fav_always_show": false,
             "fav_show_images": false,
             "fav_image_only": false,
-            "fav_heading_size_px": 18,
-            "fav_columns": "4",
+            "fav_heading_size_px": 22,
+            "fav_columns": "3",
             "fav_columns_mobile": "2",
-            "show_search": true,
+            "show_search": false,
             "show_az": true,
             "show_images": false,
             "image_only": false,
@@ -171,10 +102,10 @@
             "typography_scale": "normal",
             "name_color": "",
             "card_bg_color": "",
-            "name_size_px": 13,
-            "filter_accent_color": "",
-            "filter_shape": "default",
-            "show_heading": true,
+            "name_size_px": 16,
+            "filter_accent_color": "#355683",
+            "filter_shape": "rounded",
+            "show_heading": false,
             "heading": "Brands",
             "heading_size_px": 36,
             "heading_color": "",
@@ -211,7 +142,6 @@
   "order": [
     "image_with_text_overlay_zfdrhM",
     "main",
-    "collection_list_DQPrBp",
     "1787919918e2a4101b"
   ]
 }
