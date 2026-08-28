@@ -136,6 +136,9 @@
       "block_order": [
         "easy_brand_page_brand_page_ypNmY8"
       ],
+      "custom_css": [
+        ".ebp{max-width: 1410px;}"
+      ],
       "settings": {}
     }
   },
