@@ -15,14 +15,14 @@
         "heading_B3DXTc": {
           "type": "heading",
           "settings": {
-            "page_title": "Collections List",
+            "page_title": "NEWENT MEDIA Wholesale Catalog",
             "header_size": "default"
           }
         },
         "description_tLPCVn": {
           "type": "description",
           "settings": {
-            "description": "<p>Explore our thoughtfully curated collections: Sweaters, Handbags, Denim, and more—each <br/>perfect for enhancing every style on every special occasion and daily wear.</p>"
+            "description": "<p>Premier wholesale vinyl distributor for independent record stores across the US. Browse our full catalog <br/>— Standard 12\" LPs, 7\" Singles, Box Sets & Limited Editions — all at tiered wholesale pricing for approved accounts.</p>"
           }
         }
       },
@@ -47,7 +47,7 @@
         "color_scheme": "",
         "type": "all",
         "sort_collections": "alphabetical",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "show_product_count": false,
         "design": "default",
         "text_alignment": "center",
