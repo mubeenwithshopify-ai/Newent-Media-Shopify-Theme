@@ -94,20 +94,12 @@
             "collection": "new-entertainment",
             "collection_title": ""
           }
-        },
-        "collection_HN4Kmw": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "collection_title": ""
-          }
         }
       },
       "block_order": [
         "collection_E6BWyL",
         "collection_ayeW7Y",
-        "collection_KkQpJm",
-        "collection_HN4Kmw"
+        "collection_KkQpJm"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
@@ -121,7 +113,7 @@
         "display_mode": "carousel",
         "image_ratio": "square",
         "custom_ratio": "",
-        "items_per_row": 3,
+        "items_per_row": 4,
         "column_gap": 20,
         "collection_information_position": "overlay_image",
         "design": "futuristic",
