@@ -25,7 +25,7 @@
             "first_button_link": "shopify://collections/all",
             "first_button_style": false,
             "second_button_label": "OPEN A WHOLESALE ACCOUNT",
-            "second_button_link": "shopify://pages/wholesale-signup",
+            "second_button_link": "https://newentmedia.com/pages/wholesale-signup",
             "second_button_style": false,
             "content_alignment": "left",
             "content_position": "middle-left",
@@ -374,7 +374,7 @@
             "copy_button_label": "",
             "copy_button_type": "primary",
             "button_label": "Apply for a Wholesale Account",
-            "button_link": "https://bp8r1v-ne.myshopify.com/pages/wholesaler-registration-form",
+            "button_link": "https://newentmedia.com/pages/wholesale-signup",
             "button_type": "primary"
           }
         }
@@ -489,7 +489,7 @@
             "heading": "Fast U.S. Shipping, Every Time",
             "description": "<p>OurU.S.-based fulfillment ensures your orders ship quickly and consistently, so you can keep your shelves stocked without the wait.</p>",
             "first_button_label": "Open a Wholesale Account",
-            "first_button_link": "shopify://pages/wholesale-signup",
+            "first_button_link": "https://newentmedia.com/pages/wholesale-signup",
             "first_button_type": "outline",
             "second_button_label": "",
             "second_button_link": "",
