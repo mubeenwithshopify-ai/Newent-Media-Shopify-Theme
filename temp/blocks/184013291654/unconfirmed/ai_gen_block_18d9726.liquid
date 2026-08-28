@@ -1,6 +1,834 @@
+{% doc %}
+  @prompt
+    Build a comprehensive B2B wholesale product page layout for a vinyl record distributor. The product information section should display the following in a clean, structured layout optimized for wholesale buyers:
+    
+    **Header block:**
+    - Product image (large, prominent)
+    - Album/Release title (product title)
+    - Artist (metafield: custom.artist)
+    - Brand/Vendor
+    
+    **Product specs table (two-column grid):**
+    - Label (custom.label)
+    - Format (custom.format)
+    - Vinyl Color (custom.vinyl_color)
+    - Number of LPs (custom.number_of_lps)
+    - UPC (variant barcode)
+    - SKU (variant SKU)
+    - Release Date (custom.release_date)
+    
+    **B2B Pricing block (most prominent element, styled to stand out):**
+    - Wholesale Price (variant price) — large, bold
+    - MSRP / Suggested Retail Price (custom.msrp) — clearly labeled
+    - Retail Margin % — calculated dynamically as ((MSRP - Wholesale) / MSRP × 100), displayed as e.g. "Retail Margin: 43%"
+    
+    **Order info block:**
+    - Inventory status (in stock / out of stock)
+    - Quantity available
+    - Minimum Order Quantity (custom.minimum_order_quantity) — if set
+    - Case Pack Quantity (custom.case_pack_quantity) — if set
+    
+    **Content blocks:**
+    - Product description
+    - Track Listing (custom.track_listing) — shown in a styled two-column side A / side B layout if multiline, with a section heading "Track Listing"
+    
+    All fields should only display if they have a value (conditional rendering). Use clean typography, clear section headings, subtle dividers between sections, and a premium editorial aesthetic suitable for a wholesale vinyl music distributor. The pricing block should use a highlighted background or border to draw immediate attention.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-b2b-product-{{ai_gen_id}} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding }}px;
+    margin: 0 auto;
+  }
+
+  .ai-b2b-product-header-{{ai_gen_id}} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .ai-b2b-product-image-wrapper-{{ai_gen_id}} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: {{ block.settings.image_background }};
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-b2b-product-image-{{ai_gen_id}} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-b2b-product-placeholder-{{ai_gen_id}} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-b2b-product-placeholder-{{ai_gen_id}} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-b2b-product-info-{{ai_gen_id}} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-b2b-product-title-{{ai_gen_id}} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-b2b-product-artist-{{ai_gen_id}} {
+    font-size: {{ block.settings.artist_size }}px;
+    font-weight: {{ block.settings.artist_weight }};
+    color: {{ block.settings.artist_color }};
+    margin: 0;
+  }
+
+  .ai-b2b-product-vendor-{{ai_gen_id}} {
+    font-size: {{ block.settings.vendor_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+  }
+
+  .ai-b2b-product-specs-{{ai_gen_id}} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.specs_background }};
+    border-radius: {{ block.settings.section_border_radius }}px;
+    margin-bottom: 24px;
+  }
+
+  .ai-b2b-product-specs-title-{{ai_gen_id}} {
+    grid-column: 1 / -1;
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 8px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid {{ block.settings.divider_color }};
+  }
+
+  .ai-b2b-product-spec-item-{{ai_gen_id}} {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: {{ block.settings.text_size }}px;
+  }
+
+  .ai-b2b-product-spec-label-{{ai_gen_id}} {
+    font-weight: 600;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-b2b-product-spec-value-{{ai_gen_id}} {
+    color: {{ block.settings.text_color }};
+    text-align: right;
+  }
+
+  .ai-b2b-product-pricing-{{ai_gen_id}} {
+    padding: {{ block.settings.pricing_padding }}px;
+    background: {{ block.settings.pricing_background }};
+    border: 2px solid {{ block.settings.pricing_border_color }};
+    border-radius: {{ block.settings.section_border_radius }}px;
+    margin-bottom: 24px;
+  }
+
+  .ai-b2b-product-pricing-title-{{ai_gen_id}} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-b2b-product-pricing-grid-{{ai_gen_id}} {
+    display: grid;
+    gap: 12px;
+  }
+
+  .ai-b2b-product-price-row-{{ai_gen_id}} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-b2b-product-price-label-{{ai_gen_id}} {
+    font-size: {{ block.settings.price_label_size }}px;
+    font-weight: 500;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-b2b-product-wholesale-price-{{ai_gen_id}} {
+    font-size: {{ block.settings.wholesale_price_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.wholesale_price_color }};
+  }
+
+  .ai-b2b-product-msrp-{{ai_gen_id}} {
+    font-size: {{ block.settings.msrp_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-b2b-product-margin-{{ai_gen_id}} {
+    font-size: {{ block.settings.margin_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.margin_color }};
+    padding: 8px 16px;
+    background-color: {{ block.settings.margin_background }};
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .ai-b2b-product-order-info-{{ai_gen_id}} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.specs_background }};
+    border-radius: {{ block.settings.section_border_radius }}px;
+    margin-bottom: 24px;
+  }
+
+  .ai-b2b-product-order-title-{{ai_gen_id}} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-b2b-product-order-grid-{{ai_gen_id}} {
+    display: grid;
+    gap: 12px;
+  }
+
+  .ai-b2b-product-inventory-status-{{ai_gen_id}} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: 600;
+  }
+
+  .ai-b2b-product-status-dot-{{ai_gen_id}} {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .ai-b2b-product-status-in-stock-{{ai_gen_id}} {
+    background-color: {{ block.settings.in_stock_color }};
+  }
+
+  .ai-b2b-product-status-out-stock-{{ai_gen_id}} {
+    background-color: {{ block.settings.out_stock_color }};
+  }
+
+  .ai-b2b-product-description-{{ai_gen_id}} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.specs_background }};
+    border-radius: {{ block.settings.section_border_radius }}px;
+    margin-bottom: 24px;
+  }
+
+  .ai-b2b-product-description-title-{{ai_gen_id}} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-b2b-product-description-content-{{ai_gen_id}} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-b2b-product-tracklist-{{ai_gen_id}} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.specs_background }};
+    border-radius: {{ block.settings.section_border_radius }}px;
+  }
+
+  .ai-b2b-product-tracklist-title-{{ai_gen_id}} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-b2b-product-tracklist-grid-{{ai_gen_id}} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .ai-b2b-product-tracklist-side-{{ai_gen_id}} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-b2b-product-side-label-{{ai_gen_id}} {
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.label_color }};
+    margin-bottom: 4px;
+  }
+
+  .ai-b2b-product-track-{{ai_gen_id}} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-b2b-product-header-{{ai_gen_id}} {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .ai-b2b-product-specs-{{ai_gen_id}} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-b2b-product-tracklist-grid-{{ai_gen_id}} {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-b2b-product-{{ai_gen_id}}" {{ block.shopify_attributes }}>
+  <div class="ai-b2b-product-header-{{ai_gen_id}}">
+    <div class="ai-b2b-product-image-wrapper-{{ai_gen_id}}">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | image_url: width: 800 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          class="ai-b2b-product-image-{{ai_gen_id}}"
+          loading="lazy"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+        >
+      {% else %}
+        <div class="ai-b2b-product-placeholder-{{ai_gen_id}}">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-b2b-product-info-{{ai_gen_id}}">
+      <h1 class="ai-b2b-product-title-{{ai_gen_id}}">{{ product.title }}</h1>
+
+      {% if product.metafields.custom.artist != blank %}
+        <h2 class="ai-b2b-product-artist-{{ai_gen_id}}">{{ product.metafields.custom.artist }}</h2>
+      {% endif %}
+
+      {% if product.vendor != blank %}
+        <div class="ai-b2b-product-vendor-{{ai_gen_id}}">{{ product.vendor }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% liquid
+    assign has_specs = false
+    if product.metafields.custom.label != blank or product.metafields.custom.format != blank or product.metafields.custom.vinyl_color != blank or product.metafields.custom.number_of_lps != blank or product.selected_or_first_available_variant.barcode != blank or product.selected_or_first_available_variant.sku != blank or product.metafields.custom.release_date != blank
+      assign has_specs = true
+    endif
+  %}
+
+  {% if has_specs %}
+    <div class="ai-b2b-product-specs-{{ai_gen_id}}">
+      <h3 class="ai-b2b-product-specs-title-{{ai_gen_id}}">Product Specifications</h3>
+
+      {% if product.metafields.custom.label != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Label</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.label }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.format != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Format</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.format }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.vinyl_color != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Vinyl Color</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.vinyl_color }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.number_of_lps != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Number of LPs</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.number_of_lps }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.selected_or_first_available_variant.barcode != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">UPC</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.selected_or_first_available_variant.barcode }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.selected_or_first_available_variant.sku != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">SKU</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.selected_or_first_available_variant.sku }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.release_date != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Release Date</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.release_date }}</span>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="ai-b2b-product-pricing-{{ai_gen_id}}">
+    <h3 class="ai-b2b-product-pricing-title-{{ai_gen_id}}">B2B Pricing</h3>
+    <div class="ai-b2b-product-pricing-grid-{{ai_gen_id}}">
+      <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
+        <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Wholesale Price</span>
+        <span class="ai-b2b-product-wholesale-price-{{ai_gen_id}}">{{ product.selected_or_first_available_variant.price | money }}</span>
+      </div>
+
+      {% if product.metafields.custom.msrp != blank %}
+        <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
+          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Suggested Retail Price</span>
+          <span class="ai-b2b-product-msrp-{{ai_gen_id}}">{{ product.metafields.custom.msrp }}</span>
+        </div>
+
+        {% liquid
+          assign msrp_value = product.metafields.custom.msrp | remove: '$' | remove: ',' | times: 100
+          assign wholesale_price = product.selected_or_first_available_variant.price
+          assign margin_amount = msrp_value | minus: wholesale_price
+          assign margin_percent = margin_amount | times: 100.0 | divided_by: msrp_value | round: 1
+        %}
+
+        {% if margin_percent > 0 %}
+          <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
+            <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Retail Margin</span>
+            <span class="ai-b2b-product-margin-{{ai_gen_id}}">{{ margin_percent }}%</span>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ai-b2b-product-order-info-{{ai_gen_id}}">
+    <h3 class="ai-b2b-product-order-title-{{ai_gen_id}}">Order Information</h3>
+    <div class="ai-b2b-product-order-grid-{{ai_gen_id}}">
+      <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+        <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Availability</span>
+        <span class="ai-b2b-product-inventory-status-{{ai_gen_id}}">
+          {% if product.selected_or_first_available_variant.available %}
+            <span class="ai-b2b-product-status-dot-{{ai_gen_id}} ai-b2b-product-status-in-stock-{{ai_gen_id}}"></span>
+            <span style="color: {{ block.settings.in_stock_color }};">In Stock</span>
+          {% else %}
+            <span class="ai-b2b-product-status-dot-{{ai_gen_id}} ai-b2b-product-status-out-stock-{{ai_gen_id}}"></span>
+            <span style="color: {{ block.settings.out_stock_color }};">Out of Stock</span>
+          {% endif %}
+        </span>
+      </div>
+
+      {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Quantity Available</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.selected_or_first_available_variant.inventory_quantity }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.minimum_order_quantity != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Minimum Order Quantity</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.minimum_order_quantity }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.case_pack_quantity != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Case Pack Quantity</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.case_pack_quantity }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if product.description != blank %}
+    <div class="ai-b2b-product-description-{{ai_gen_id}}">
+      <h3 class="ai-b2b-product-description-title-{{ai_gen_id}}">Description</h3>
+      <div class="ai-b2b-product-description-content-{{ai_gen_id}}">
+        {{ product.description }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.track_listing != blank %}
+    <div class="ai-b2b-product-tracklist-{{ai_gen_id}}">
+      <h3 class="ai-b2b-product-tracklist-title-{{ai_gen_id}}">Track Listing</h3>
+
+      {% assign tracks = product.metafields.custom.track_listing | newline_to_br | split: '<br />' %}
+      {% assign track_count = tracks.size %}
+      {% assign half_point = track_count | divided_by: 2.0 | ceil %}
+
+      <div class="ai-b2b-product-tracklist-grid-{{ai_gen_id}}">
+        <div class="ai-b2b-product-tracklist-side-{{ai_gen_id}}">
+          <div class="ai-b2b-product-side-label-{{ai_gen_id}}">Side A</div>
+          {% for track in tracks limit: half_point %}
+            {% if track != blank %}
+              <div class="ai-b2b-product-track-{{ai_gen_id}}">{{ track }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if track_count > half_point %}
+          <div class="ai-b2b-product-tracklist-side-{{ai_gen_id}}">
+            <div class="ai-b2b-product-side-label-{{ai_gen_id}}">Side B</div>
+            {% for track in tracks offset: half_point %}
+              {% if track != blank %}
+                <div class="ai-b2b-product-track-{{ai_gen_id}}">{{ track }}</div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "B2B product layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Container padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "section_border_radius",
+      "label": "Section border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "specs_background",
+      "label": "Section background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Headings",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Labels",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Product header"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Title weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "artist_size",
+      "label": "Artist size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "artist_weight",
+      "label": "Artist weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "artist_color",
+      "label": "Artist color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "vendor_size",
+      "label": "Vendor size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "color",
+      "id": "image_background",
+      "label": "Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "section_title_size",
+      "label": "Section title size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Pricing section"
+    },
+    {
+      "type": "color",
+      "id": "pricing_background",
+      "label": "Background",
+      "default": "#f0f8ff"
+    },
+    {
+      "type": "color",
+      "id": "pricing_border_color",
+      "label": "Border",
+      "default": "#355683"
+    },
+    {
+      "type": "range",
+      "id": "pricing_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "price_label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "wholesale_price_size",
+      "label": "Wholesale price size",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "wholesale_price_color",
+      "label": "Wholesale price color",
+      "default": "#355683"
+    },
+    {
+      "type": "range",
+      "id": "msrp_size",
+      "label": "MSRP size",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "margin_size",
+      "label": "Margin size",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "margin_color",
+      "label": "Margin text",
+      "default": "#14854e"
+    },
+    {
+      "type": "color",
+      "id": "margin_background",
+      "label": "Margin background",
+      "default": "#e8f5e9"
+    },
+    {
+      "type": "header",
+      "content": "Inventory status"
+    },
+    {
+      "type": "color",
+      "id": "in_stock_color",
+      "label": "In stock",
+      "default": "#14854e"
+    },
+    {
+      "type": "color",
+      "id": "out_stock_color",
+      "label": "Out of stock",
+      "default": "#d0473e"
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B product layout"
+    }
+  ]
+}
 {% endschema %}
