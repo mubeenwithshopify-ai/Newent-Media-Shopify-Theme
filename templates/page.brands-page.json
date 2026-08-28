@@ -137,7 +137,7 @@
         "easy_brand_page_brand_page_ypNmY8"
       ],
       "custom_css": [
-        ".ebp {max-width: 1410px !important;}"
+        ".ebp {max-width: 1410px !important; padding: 0px 10px;}"
       ],
       "settings": {}
     }
