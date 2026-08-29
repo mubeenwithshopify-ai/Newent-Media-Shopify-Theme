@@ -35,6 +35,7 @@
     All fields should only display if they have a value (conditional rendering). Use clean typography, clear section headings, subtle dividers between sections, and a premium editorial aesthetic suitable for a wholesale vinyl music distributor. The pricing block should use a highlighted background or border to draw immediate attention.
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% assign selected_variant = product.selected_or_first_available_variant %}
 
 {% style %}
   .ai-b2b-product-{{ai_gen_id}} {
@@ -172,6 +173,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+  }
+
+  .ai-b2b-product-price-row-{{ai_gen_id}}[hidden] {
+    display: none !important;
   }
 
   .ai-b2b-product-price-label-{{ai_gen_id}} {
@@ -181,9 +187,22 @@
   }
 
   .ai-b2b-product-wholesale-price-{{ai_gen_id}} {
+    min-width: 0;
+    text-align: right;
     font-size: {{ block.settings.wholesale_price_size }}px;
     font-weight: 700;
     color: {{ block.settings.wholesale_price_color }};
+  }
+
+  .ai-b2b-product-wholesale-price-{{ai_gen_id}} .price,
+  .ai-b2b-product-wholesale-price-{{ai_gen_id}} .card-product-price {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  .ai-b2b-product-margin-row-{{ai_gen_id}} {
+    margin-top: 4px;
   }
 
   .ai-b2b-product-msrp-{{ai_gen_id}} {
@@ -315,6 +334,16 @@
       grid-template-columns: 1fr;
       gap: 16px;
     }
+
+    .ai-b2b-product-price-row-{{ai_gen_id}} {
+      align-items: flex-start;
+    }
+
+    .ai-b2b-product-wholesale-price-{{ai_gen_id}},
+    .ai-b2b-product-msrp-{{ai_gen_id}} {
+      text-align: right;
+      max-width: 65%;
+    }
   }
 {% endstyle %}
 
@@ -412,33 +441,30 @@
     </div>
   {% endif %}
 
-  <div class="ai-b2b-product-pricing-{{ai_gen_id}}">
+  <div class="ai-b2b-product-pricing-{{ai_gen_id}}" data-b2b-pricing>
     <h3 class="ai-b2b-product-pricing-title-{{ai_gen_id}}">B2B Pricing</h3>
     <div class="ai-b2b-product-pricing-grid-{{ai_gen_id}}">
       <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
         <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Wholesale Price</span>
-        <span class="ai-b2b-product-wholesale-price-{{ai_gen_id}}">{{ product.selected_or_first_available_variant.price | money }}</span>
+        <div class="ai-b2b-product-wholesale-price-{{ai_gen_id}}" data-b2b-wholesale-price>
+          {% render 'price', scope: 'detail', product: product %}
+        </div>
       </div>
 
       {% if product.metafields.custom.msrp != blank %}
         <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
-          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Suggested Retail Price</span>
-          <span class="ai-b2b-product-msrp-{{ai_gen_id}}">{{ product.metafields.custom.msrp }}</span>
+          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">MSRP / Suggested Retail Price</span>
+          <span class="ai-b2b-product-msrp-{{ai_gen_id}}" data-b2b-msrp>{{ product.metafields.custom.msrp }}</span>
         </div>
 
-        {% liquid
-          assign msrp_value = product.metafields.custom.msrp | remove: '$' | remove: ',' | times: 100
-          assign wholesale_price = product.selected_or_first_available_variant.price
-          assign margin_amount = msrp_value | minus: wholesale_price
-          assign margin_percent = margin_amount | times: 100.0 | divided_by: msrp_value | round: 1
-        %}
-
-        {% if margin_percent > 0 %}
-          <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
-            <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Retail Margin</span>
-            <span class="ai-b2b-product-margin-{{ai_gen_id}}">{{ margin_percent }}%</span>
-          </div>
-        {% endif %}
+        <div
+          class="ai-b2b-product-price-row-{{ai_gen_id}} ai-b2b-product-margin-row-{{ai_gen_id}}"
+          data-b2b-margin-row
+          hidden
+        >
+          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Retail Margin</span>
+          <span class="ai-b2b-product-margin-{{ai_gen_id}}" data-b2b-margin-value></span>
+        </div>
       {% endif %}
     </div>
   </div>
@@ -524,6 +550,68 @@
   {% endif %}
 </div>
 
+
+{% if product.metafields.custom.msrp != blank %}
+  <script>
+    (() => {
+      const root = document.querySelector('.ai-b2b-product-{{ ai_gen_id }}');
+      if (!root || root.dataset.b2bMarginReady === 'true') return;
+      root.dataset.b2bMarginReady = 'true';
+
+      const wholesale = root.querySelector('[data-b2b-wholesale-price]');
+      const msrp = root.querySelector('[data-b2b-msrp]');
+      const marginRow = root.querySelector('[data-b2b-margin-row]');
+      const marginValue = root.querySelector('[data-b2b-margin-value]');
+
+      if (!wholesale || !msrp || !marginRow || !marginValue) return;
+
+      const moneyNumber = (value) => {
+        if (!value) return null;
+        const normalized = value
+          .replace(/\s/g, '')
+          .replace(/,/g, '')
+          .replace(/[^0-9.\-]/g, '');
+        const number = parseFloat(normalized);
+        return Number.isFinite(number) ? number : null;
+      };
+
+      const wholesaleNumber = () => {
+        // BSS can replace this area with a lock/login message. Never calculate
+        // a margin unless an actual numeric price is currently rendered.
+        const text = wholesale.textContent || '';
+        const value = moneyNumber(text);
+        return value && value > 0 ? value : null;
+      };
+
+      const updateMargin = () => {
+        const retailPrice = moneyNumber(msrp.textContent || '');
+        const costPrice = wholesaleNumber();
+
+        if (!retailPrice || !costPrice || retailPrice <= 0 || costPrice <= 0 || costPrice >= retailPrice) {
+          marginRow.hidden = true;
+          marginValue.textContent = '';
+          return;
+        }
+
+        const margin = ((retailPrice - costPrice) / retailPrice) * 100;
+        marginValue.textContent = (Math.round(margin * 10) / 10) + '%';
+        marginRow.hidden = false;
+      };
+
+      updateMargin();
+
+      new MutationObserver(updateMargin).observe(wholesale, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+
+      document.addEventListener('variant:change', () => setTimeout(updateMargin, 100));
+      setTimeout(updateMargin, 500);
+      setTimeout(updateMargin, 1500);
+    })();
+  </script>
+{% endif %}
 {% schema %}
 {
   "name": "B2B product layout",
