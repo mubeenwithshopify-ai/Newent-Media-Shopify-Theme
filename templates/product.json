@@ -17,6 +17,54 @@
         "next_prev": true
       }
     },
+    "1787924704b0327926": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_18d9726_Y8WyWM": {
+          "type": "ai_gen_block_18d9726",
+          "settings": {
+            "desktop_width_percent": 100,
+            "padding": 30,
+            "border_radius": 8,
+            "section_padding": 24,
+            "section_border_radius": 6,
+            "background_color": "#ffffff",
+            "specs_background": "#f9f9f9",
+            "title_color": "#111111",
+            "text_color": "#444444",
+            "label_color": "#666666",
+            "divider_color": "#e0e0e0",
+            "title_size": 32,
+            "title_weight": 600,
+            "artist_size": 20,
+            "artist_weight": 500,
+            "artist_color": "#666666",
+            "vendor_size": 14,
+            "image_background": "#f5f5f5",
+            "image_border_radius": 6,
+            "section_title_size": 18,
+            "text_size": 14,
+            "pricing_background": "#f0f8ff",
+            "pricing_border_color": "#355683",
+            "pricing_padding": 25,
+            "price_label_size": 14,
+            "wholesale_price_size": 28,
+            "wholesale_price_color": "#355683",
+            "msrp_size": 18,
+            "margin_size": 16,
+            "margin_color": "#14854e",
+            "margin_background": "#e8f5e9",
+            "in_stock_color": "#14854e",
+            "out_stock_color": "#d0473e"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_18d9726_Y8WyWM"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -180,6 +228,7 @@
         "collapsible_row_DA4FUC",
         "complementary_products_Wip9YG"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
@@ -201,6 +250,7 @@
     },
     "product-set": {
       "type": "product-set",
+      "disabled": true,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
@@ -222,12 +272,9 @@
         "reset_spacing": false
       }
     },
-    "1716793714ce89e457": {
-      "type": "apps",
-      "settings": {}
-    },
     "divider_TKLM6L": {
       "type": "divider",
+      "disabled": true,
       "settings": {
         "section_width": "fluid_container",
         "border_height": 1,
@@ -285,65 +332,16 @@
         "padding_bottom": 0,
         "reset_spacing": true
       }
-    },
-    "1787924704b0327926": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_18d9726_Y8WyWM": {
-          "type": "ai_gen_block_18d9726",
-          "settings": {
-            "desktop_width_percent": 100,
-            "padding": 30,
-            "border_radius": 8,
-            "section_padding": 24,
-            "section_border_radius": 6,
-            "background_color": "#ffffff",
-            "specs_background": "#f9f9f9",
-            "title_color": "#111111",
-            "text_color": "#444444",
-            "label_color": "#666666",
-            "divider_color": "#e0e0e0",
-            "title_size": 32,
-            "title_weight": 600,
-            "artist_size": 20,
-            "artist_weight": 500,
-            "artist_color": "#666666",
-            "vendor_size": 14,
-            "image_background": "#f5f5f5",
-            "image_border_radius": 6,
-            "section_title_size": 18,
-            "text_size": 14,
-            "pricing_background": "#f0f8ff",
-            "pricing_border_color": "#355683",
-            "pricing_padding": 25,
-            "price_label_size": 14,
-            "wholesale_price_size": 28,
-            "wholesale_price_color": "#355683",
-            "msrp_size": 18,
-            "margin_size": 16,
-            "margin_color": "#14854e",
-            "margin_background": "#e8f5e9",
-            "in_stock_color": "#14854e",
-            "out_stock_color": "#d0473e"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_18d9726_Y8WyWM"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "breadcrumb",
+    "1787924704b0327926",
     "main",
     "product-set",
-    "1716793714ce89e457",
     "divider_TKLM6L",
     "related_products",
     "divider_HtLXd3",
-    "products_recently_viewed_GdCNUL",
-    "1787924704b0327926"
+    "products_recently_viewed_GdCNUL"
   ]
 }
