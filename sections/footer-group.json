@@ -74,7 +74,7 @@
         "payment_enable": true,
         "payment_width": 340,
         "copyright_text": "© 2026 Newent Media. All rights reserved.",
-        "footer_heading_size": 24,
+        "footer_heading_size": 20,
         "padding_top": 60,
         "padding_bottom": 45,
         "reset_spacing_on_homepage": true
