@@ -462,8 +462,13 @@
   </div>
 
   {% liquid
+    assign product_genre = product.metafields.custom.custom_genre
+    if product_genre == blank
+      assign product_genre = product.metafields.custom.genre
+    endif
+
     assign has_specs = false
-    if product.metafields.custom.label != blank or product.metafields.custom.genre != blank or product.metafields.custom.format != blank or product.metafields.custom.vinyl_color != blank or product.metafields.custom.number_of_lps != blank or product.selected_or_first_available_variant.barcode != blank or product.selected_or_first_available_variant.sku != blank or product.metafields.custom.release_date != blank
+    if product.metafields.custom.label != blank or product_genre != blank or product.metafields.custom.format != blank or product.metafields.custom.vinyl_color != blank or product.metafields.custom.number_of_lps != blank or product.selected_or_first_available_variant.barcode != blank or product.selected_or_first_available_variant.sku != blank or product.metafields.custom.release_date != blank
       assign has_specs = true
     endif
   %}
@@ -476,6 +481,19 @@
         <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
           <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Label</span>
           <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">{{ product.metafields.custom.label }}</span>
+        </div>
+      {% endif %}
+
+      {% if product_genre != blank %}
+        <div class="ai-b2b-product-spec-item-{{ai_gen_id}}">
+          <span class="ai-b2b-product-spec-label-{{ai_gen_id}}">Genre</span>
+          <span class="ai-b2b-product-spec-value-{{ai_gen_id}}">
+            {% if product_genre.type contains 'list.' %}
+              {{ product_genre.value | join: ', ' }}
+            {% else %}
+              {{ product_genre.value }}
+            {% endif %}
+          </span>
         </div>
       {% endif %}
 
