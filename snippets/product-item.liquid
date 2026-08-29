@@ -54,6 +54,20 @@
 %}
 {% comment %} Case card product has data, handle data {% endcomment %}
 {% if card_product and card_product != empty %}
+  {% capture bss_card_atc_check %}
+    {% render 'bss-lock-condition',
+      scope: 'subject',
+      subject: card_product,
+      subject_parent: card_product,
+      variable: 'atc',
+      get_content: true,
+      bss_lock_action: 'bss_hide_atc'
+    %}
+  {% endcapture %}
+  {% assign bss_card_atc_locked = false %}
+  {% if bss_card_atc_check contains 'bss-hide-atc' %}
+    {% assign bss_card_atc_locked = true %}
+  {% endif %}
   <div
     class="product-item product__item-js {{ class }} style-as-{{ product_style }}"
     {% if type == 'sticky' %}
@@ -485,7 +499,7 @@
                   {% endif %}
                 {% endif %}
                 {% if product_style != 'morden' and product_style != 'scale' %}
-                  {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false %}
+                  {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false and bss_card_atc_locked == false %}
                     {%- liquid
                       assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
                       assign qty_rules = false
@@ -674,8 +688,8 @@
           {% endif %}
         {%- endif -%}
         {% if type == 'list' or type == 'sticky' or type == 'bundle' %}
-          <div class="flex flex-wrap gap-10 product-list-action  {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false %}{% else %}not-content{% endif %}">
-            {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false %}
+          <div class="flex flex-wrap gap-10 product-list-action  {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false and bss_card_atc_locked == false %}{% else %}not-content{% endif %}">
+            {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false and bss_card_atc_locked == false %}
               {%- liquid
                 assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
                 assign qty_rules = false
@@ -813,7 +827,7 @@
           </div>
         {% else %}
           {% if product_style == 'morden' %}
-            {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false %}
+            {% if template_enable_add_cart == true and show_add_cart and theme_st.enable_catalog_mode == false and bss_card_atc_locked == false %}
               {%- liquid
                 assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
                 assign qty_rules = false
