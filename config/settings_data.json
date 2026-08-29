@@ -54,7 +54,7 @@
     "show_compare": false,
     "custom_action_color": "#ffffff",
     "custom_action_background": "#111111",
-    "custom_action_hover_color": "#355683",
+    "custom_action_hover_color": "#000000",
     "custom_action_hover_background": "#FFFFFF",
     "product_alignment": "start",
     "product_size": 18,
