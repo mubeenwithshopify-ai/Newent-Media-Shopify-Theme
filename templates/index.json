@@ -32,7 +32,7 @@
             "content_width": "fluid_container",
             "content_max_width": 48,
             "content_padding_block": 80,
-            "content_padding_inline": 60,
+            "content_padding_inline": 10,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
