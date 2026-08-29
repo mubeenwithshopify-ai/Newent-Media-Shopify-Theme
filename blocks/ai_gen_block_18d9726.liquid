@@ -38,6 +38,7 @@
 {% assign selected_variant = product.selected_or_first_available_variant %}
 {% assign msrp_metafield = product.metafields.custom.msrp %}
 {% assign msrp_value = msrp_metafield.value %}
+{% assign ai_b2b_product_form_id = 'b2b-product-form-' | append: section.id | append: '-' | append: ai_gen_id %}
 
 {% style %}
   .ai-b2b-product-{{ai_gen_id}} {
@@ -205,6 +206,24 @@
 
   .ai-b2b-product-margin-row-{{ai_gen_id}} {
     margin-top: 4px;
+  }
+
+  .ai-b2b-product-purchase-{{ai_gen_id}} {
+    margin-top: 24px;
+  }
+
+  .ai-b2b-product-purchase-{{ai_gen_id}} .product__submit-form,
+  .ai-b2b-product-purchase-{{ai_gen_id}} .product-form,
+  .ai-b2b-product-purchase-{{ai_gen_id}} .product-form__buttons {
+    width: 100%;
+  }
+
+  .ai-b2b-product-purchase-{{ai_gen_id}} .product-form__buttons {
+    align-items: stretch;
+  }
+
+  .ai-b2b-product-purchase-{{ai_gen_id}} .product__submit-form-cart {
+    width: 100%;
   }
 
   .ai-b2b-product-msrp-{{ai_gen_id}} {
@@ -475,6 +494,20 @@
         </div>
       {% endif %}
     </div>
+  </div>
+
+  <div class="ai-b2b-product-purchase-{{ai_gen_id}}" data-b2b-purchase-area>
+    {% render 'buy-buttons',
+      block: block,
+      product: product,
+      product_form_id: ai_b2b_product_form_id,
+      section_id: section.id,
+      show_quantity: block.settings.show_quantity,
+      show_wishlist: false,
+      show_compare: false,
+      formClass: 'feature-product-form',
+      type: 'main_product'
+    %}
   </div>
 
   <div class="ai-b2b-product-order-info-{{ai_gen_id}}">
@@ -920,6 +953,19 @@
       "id": "out_stock_color",
       "label": "Out of stock",
       "default": "#d0473e"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "Show dynamic checkout button",
+      "default": false,
+      "info": "The Add to Cart controls follow the theme and BSS B2B Lock rules. Enable this only if accelerated checkout is required for approved B2B customers."
     }
   ],
   "presets": [
