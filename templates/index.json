@@ -18,13 +18,13 @@
             "image": "shopify://shop_images/people-vinyl-records-side-view_23-2149726820.avif",
             "overlay_opacity": 35,
             "slider_effect": "effect_zoomout",
-            "subheading": "WHOLESALE VINYL DISTRIBUTION",
-            "heading": "VINYL DISTRIBUTION FOR INDEPENDENT RETAILERS",
-            "description": "<p>Discover a curated catalog of vinyl from independent labels and unique releases, backed by competitive wholesale pricing and reliable U.S. fulfillment</p>",
-            "first_button_label": "SHOP CATALOG",
+            "subheading": "PREMIUM WHOLESALE VINYL DISTRIBUTION",
+            "heading": "A CURATED CATALOG FOR INDEPENDENT RECORD STORES",
+            "description": "<p>Source vinyl LPs, limited pressings, and music accessories from independent labels through a dependable wholesale distribution partner.</p>",
+            "first_button_label": "BROWSE WHOLESALE CATALOG",
             "first_button_link": "shopify://collections/all",
             "first_button_style": false,
-            "second_button_label": "OPEN A WHOLESALE ACCOUNT",
+            "second_button_label": "APPLY FOR A WHOLESALE ACCOUNT",
             "second_button_link": "https://newentmedia.com/pages/wholesale-signup",
             "second_button_style": false,
             "content_alignment": "left",
@@ -108,8 +108,8 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "heading": "BRANDS WE DISTRIBUTE",
-        "description": "<p>Independent labels. Distinctive releases. A catalog built for record retailers.</p>",
+        "heading": "LABELS IN OUR DISTRIBUTION CATALOG",
+        "description": "<p>Independent labels, essential artists, and distinctive pressings selected for record retailers.</p>",
         "header_size": "large",
         "header_alignment": "center",
         "image_ratio": "adapt",
@@ -156,15 +156,15 @@
             "content_padding_block": 30,
             "content_padding_inline": 30,
             "image_link": "",
-            "subheading": "OUR STORY",
-            "heading": "BUILT AROUND INDEPENDENT RECORD RETAILERS",
-            "description": "<p>We believe independent record stores deserve access to great music, distinctive releases, and a wholesale experience built around the way they actually buy.</p><p>We work with independent labels and unique releases to bring a carefully selected vinyl catalog to retailers across the U.S., with competitive wholesale pricing and reliable fulfillment.</p>",
+            "subheading": "OUR DISTRIBUTION APPROACH",
+            "heading": "BUILT FOR INDEPENDENT RECORD RETAILERS",
+            "description": "<p>We give independent record stores access to exceptional vinyl, limited editions, and music accessories through a wholesale experience designed around real retail needs.</p><p>Our curated catalog, competitive pricing, and reliable U.S. fulfillment help retailers keep their shelves fresh and their customers engaged.</p>",
             "timer": "",
             "expired_message": "Time expired",
             "style": "default",
             "font_size": 36,
             "spacing_bottom": 30,
-            "first_button_label": "LEARN MORE ABOUT US",
+            "first_button_label": "ABOUT OUR DISTRIBUTION",
             "first_button_link": "shopify://pages/about",
             "first_button_type": "primary",
             "second_button_label": "",
@@ -209,8 +209,8 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "default",
-        "heading": "NEW & NOTEWORTHY",
-        "description": "Latest additions to our wholesale catalog",
+        "heading": "NEW ARRIVALS FOR YOUR RECORD STORE",
+        "description": "Latest LPs, limited pressings, and accessories added to our wholesale catalog",
         "show_view_all_button": false,
         "header_size": "large",
         "header_alignment": "center",
@@ -244,13 +244,13 @@
         "scrolling_text_YKzLcM": {
           "type": "scrolling_text",
           "settings": {
-            "content": "Love the Skin You're In"
+            "content": "CURATED VINYL FOR INDEPENDENT RECORD STORES"
           }
         },
         "scrolling_text_QKhHn6": {
           "type": "scrolling_text",
           "settings": {
-            "content": "Radiate with Confidence"
+            "content": "LIMITED PRESSINGS • RELIABLE WHOLESALE FULFILLMENT"
           }
         }
       },
@@ -284,7 +284,7 @@
         "heading_C7g83r": {
           "type": "heading",
           "settings": {
-            "heading": "Wholesale Vinyl Distribution",
+            "heading": "WHOLESALE VINYL DISTRIBUTION",
             "font_size": 24,
             "font_weight": "body_weight",
             "uppercase": false,
@@ -294,7 +294,7 @@
         "heading_dTWRf7": {
           "type": "heading",
           "settings": {
-            "heading": "Independent labels. \n<br>Distinctive releases",
+            "heading": "Independent labels.<br>Distinctive pressings.",
             "font_size": 50,
             "font_weight": "heading_weight",
             "uppercase": false,
@@ -304,7 +304,7 @@
         "description_i7gWRY": {
           "type": "description",
           "settings": {
-            "description": "<p>Curated vinyl from independent labels — built for record retailers who demand quality, reliability, and competitive wholesale pricing.</p>",
+            "description": "<p>Curated vinyl from independent artists and labels — selected for record retailers who value quality, availability, and dependable wholesale service.</p>",
             "font_size": 18,
             "font_weight": "body_weight",
             "spacing_bottom": 30
@@ -313,7 +313,7 @@
         "button_PzUeid": {
           "type": "button",
           "settings": {
-            "first_button_label": "Shop Now",
+            "first_button_label": "BROWSE THE CATALOG",
             "first_button_link": "shopify://collections/all",
             "first_button_type": "outline",
             "second_button_label": "",
@@ -360,11 +360,11 @@
         "content_Hz3VXr": {
           "type": "content",
           "settings": {
-            "heading": "Ready to Start Wholesale Ordering?",
+            "heading": "READY TO STOCK YOUR NEXT VINYL ORDER?",
             "font_size": 30,
             "font_weight": "heading_weight",
             "uppercase": false,
-            "description": "<p>Join hundreds of businesses already saving with NEWENT MEDIA wholesale pricing. Apply for your account today — approval takes just 24-48 hours.</p>",
+            "description": "<p>Open a wholesale account to access our curated catalog of LPs, limited editions, and music accessories for independent record stores.</p>",
             "font_size_des": 16
           }
         },
@@ -373,7 +373,7 @@
           "settings": {
             "copy_button_label": "",
             "copy_button_type": "primary",
-            "button_label": "Apply for a Wholesale Account",
+            "button_label": "OPEN A WHOLESALE ACCOUNT",
             "button_link": "https://newentmedia.com/pages/wholesale-signup",
             "button_type": "primary"
           }
@@ -410,8 +410,8 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "heading": "Flawless Trends",
-        "description": "",
+        "heading": "LIMITED EDITIONS & RETAIL ESSENTIALS",
+        "description": "Distinctive pressings and dependable accessories for your record store",
         "show_view_all_button": false,
         "header_size": "medium",
         "header_alignment": "center",
@@ -451,10 +451,10 @@
             "image": "shopify://shop_images/independent-labels-curated-catalog.png",
             "image_behavior": "none",
             "image_link": "",
-            "subheading": "",
-            "heading": "Independent Labels, Hand-Picked",
-            "description": "<p>We source exclusively from independent labels, giving your store access to distinctive releases your customers won't find at big-box retailers.<br/><br/></p>",
-            "first_button_label": "Browse Catalog",
+            "subheading": "CURATED CATALOG",
+            "heading": "INDEPENDENT LABELS, DISTINCTIVE PRESSINGS",
+            "description": "<p>We source from independent labels to give your store access to essential artists, limited editions, and records your customers will be excited to discover.</p>",
+            "first_button_label": "BROWSE THE WHOLESALE CATALOG",
             "first_button_link": "shopify://collections/all",
             "first_button_type": "outline",
             "second_button_label": "",
@@ -485,10 +485,10 @@
             "image": "shopify://shop_images/fast-u-s-shipping-fulfillment.png",
             "image_behavior": "none",
             "image_link": "",
-            "subheading": "",
-            "heading": "Fast U.S. Shipping, Every Time",
-            "description": "<p>OurU.S.-based fulfillment ensures your orders ship quickly and consistently, so you can keep your shelves stocked without the wait.</p>",
-            "first_button_label": "Open a Wholesale Account",
+            "subheading": "RELIABLE DISTRIBUTION",
+            "heading": "FAST U.S. FULFILLMENT FOR RETAILERS",
+            "description": "<p>U.S.-based fulfillment keeps your wholesale orders moving reliably, helping your record store stay stocked with the releases your customers want.</p>",
+            "first_button_label": "APPLY FOR A WHOLESALE ACCOUNT",
             "first_button_link": "https://newentmedia.com/pages/wholesale-signup",
             "first_button_type": "outline",
             "second_button_label": "",
@@ -539,8 +539,8 @@
           "settings": {
             "icon_svg": "check_badge",
             "custom_svg": "",
-            "heading": "INDEPENDENT LABELS ONLY",
-            "description": "<p>Exclusively sourced from independent labels — no major label filler, just distinctive releases your customers will love.</p>"
+            "heading": "INDEPENDENT LABELS & ARTISTS",
+            "description": "<p>A considered catalog of distinctive releases from independent labels and artists.</p>"
           }
         },
         "icon_box_ACjiqA": {
@@ -548,8 +548,8 @@
           "settings": {
             "icon_svg": "truck",
             "custom_svg": "<svg viewbox=\"0 0 24 24\" width=\"40\" fill=\"none\">\n  <path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 14.501h1c1.1 0 2-.9 2-2v-10H6c-1.5 0-2.81.83-3.49 2.05\"></path>\n  <path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2 17.501c0 1.66 1.34 3 3 3h1c0-1.1.9-2 2-2s2 .9 2 2h4c0-1.1.9-2 2-2s2 .9 2 2h1c1.66 0 3-1.34 3-3v-3h-3c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1.29l-1.71-2.99a2.016 2.016 0 0 0-1.74-1.01H15v7c0 1.1-.9 2-2 2h-1\"></path>\n  <path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M8 22.501a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM16 22.501a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM22 12.501v2h-3c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1.29l1.71 3ZM2 8.501h6M2 11.501h4M2 14.501h2\"></path>\n</svg>",
-            "heading": "FAST U.S. FULFILLMENT",
-            "description": "<p>Reliable, U.S.-based shipping so your store stays stocked and your customers stay happy.</p>"
+            "heading": "RELIABLE U.S. FULFILLMENT",
+            "description": "<p>Consistent wholesale shipping helps keep your record store stocked and ready to sell.</p>"
           }
         },
         "icon_box_RLNr9a": {
@@ -557,8 +557,8 @@
           "settings": {
             "icon_svg": "free_shipping",
             "custom_svg": "",
-            "heading": "COMPETITIVE WHOLESALE PRICING",
-            "description": "<p>Margins built for independent retailers — transparent pricing with no hidden fees or minimums.</p>"
+            "heading": "RETAILER-READY WHOLESALE PRICING",
+            "description": "<p>Clear pricing and retailer-focused margins across vinyl LPs, limited editions, and accessories.</p>"
           }
         },
         "icon_box_tj4DJd": {
@@ -567,7 +567,7 @@
             "icon_svg": "headset",
             "custom_svg": "",
             "heading": "DEDICATED RETAILER SUPPORT",
-            "description": "<p>Our team understands the independent record store business and is here to help you grow.</p>"
+            "description": "<p>Practical support from a team that understands independent record stores and wholesale distribution.</p>"
           }
         }
       },
