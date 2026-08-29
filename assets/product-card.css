@@ -413,3 +413,45 @@ media-gallery .external_video iframe model-viewer {
 .product-item iframe{
   pointer-events: none;
 }
+
+
+/* B2B locked price + public MSRP presentation */
+.bss-locked-price-with-msrp {
+  gap: 10px;
+}
+
+.bss-locked-price-with-msrp .bss-lock-element {
+  flex: 0 1 auto;
+}
+
+.bss-product-msrp {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding-left: 10px;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+.bss-product-msrp-label {
+  font-size: 0.85em;
+  font-weight: var(--body-font-weight, 500);
+  color: var(--color-secondary);
+}
+
+.bss-product-msrp-value {
+  font-weight: var(--heading-weight, 600);
+  color: var(--color-primary);
+}
+
+@media (max-width: 575.98px) {
+  .bss-locked-price-with-msrp {
+    align-items: flex-start;
+  }
+
+  .bss-product-msrp {
+    padding-left: 8px;
+    margin-left: 2px;
+  }
+}
