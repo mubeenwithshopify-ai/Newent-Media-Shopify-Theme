@@ -58,19 +58,20 @@
     margin-bottom: 40px;
   }
 
-  .ai-b2b-product-image-wrapper-{{ai_gen_id}} {
-    position: relative;
+  .ai-b2b-product-media-{{ai_gen_id}} {
     width: 100%;
-    aspect-ratio: 1;
-    background-color: {{ block.settings.image_background }};
+    min-width: 0;
+  }
+
+  .ai-b2b-product-media-{{ai_gen_id}} .media-main-swiper,
+  .ai-b2b-product-media-{{ai_gen_id}} .grid_scroll,
+  .ai-b2b-product-media-{{ai_gen_id}} .stacked {
     border-radius: {{ block.settings.image_border_radius }}px;
     overflow: hidden;
   }
 
-  .ai-b2b-product-image-{{ai_gen_id}} {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .ai-b2b-product-media-{{ai_gen_id}} img {
+    max-width: 100%;
   }
 
   .ai-b2b-product-placeholder-{{ai_gen_id}} {
@@ -347,6 +348,14 @@
       gap: 24px;
     }
 
+    .ai-b2b-product-media-{{ai_gen_id}} {
+      width: 100%;
+    }
+
+    .ai-b2b-product-media-{{ai_gen_id}} .media-thumb-swiper {
+      margin-top: 10px;
+    }
+
     .ai-b2b-product-specs-{{ai_gen_id}} {
       grid-template-columns: 1fr;
     }
@@ -370,16 +379,17 @@
 
 <div class="ai-b2b-product-{{ai_gen_id}}" {{ block.shopify_attributes }}>
   <div class="ai-b2b-product-header-{{ai_gen_id}}">
-    <div class="ai-b2b-product-image-wrapper-{{ai_gen_id}}">
-      {% if product.featured_image %}
-        <img
-          src="{{ product.featured_image | image_url: width: 800 }}"
-          alt="{{ product.featured_image.alt | escape }}"
-          class="ai-b2b-product-image-{{ai_gen_id}}"
-          loading="lazy"
-          width="{{ product.featured_image.width }}"
-          height="{{ product.featured_image.height }}"
-        >
+    <div class="ai-b2b-product-media-{{ai_gen_id}}">
+      {% if product.media.size > 0 %}
+        {% render 'media-gallery',
+          images: product.media,
+          section_st: section.settings,
+          theme_st: settings,
+          product: product,
+          section: section,
+          position_index: 0,
+          desktop_layout: section.settings.desktop_layout
+        %}
       {% else %}
         <div class="ai-b2b-product-placeholder-{{ai_gen_id}}">
           {{ 'product-1' | placeholder_svg_tag }}
@@ -397,6 +407,57 @@
       {% if product.vendor != blank %}
         <div class="ai-b2b-product-vendor-{{ai_gen_id}}">{{ product.vendor }}</div>
       {% endif %}
+
+  <div class="ai-b2b-product-pricing-{{ai_gen_id}}" data-b2b-pricing>
+    <h3 class="ai-b2b-product-pricing-title-{{ai_gen_id}}">B2B Pricing</h3>
+    <div class="ai-b2b-product-pricing-grid-{{ai_gen_id}}">
+      <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
+        <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Wholesale Price</span>
+        <div class="ai-b2b-product-wholesale-price-{{ai_gen_id}}" data-b2b-wholesale-price>
+          {% render 'price', scope: 'detail', product: product %}
+        </div>
+      </div>
+
+      {% if msrp_metafield != blank and msrp_value != blank %}
+        <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
+          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">MSRP / Suggested Retail Price</span>
+          <span
+            class="ai-b2b-product-msrp-{{ai_gen_id}}"
+            data-b2b-msrp
+            data-b2b-msrp-amount="{{ msrp_value.amount | default: msrp_value }}"
+          >
+            {{ msrp_value | money }}
+          </span>
+        </div>
+
+        <div
+          class="ai-b2b-product-price-row-{{ai_gen_id}} ai-b2b-product-margin-row-{{ai_gen_id}}"
+          data-b2b-margin-row
+          hidden
+        >
+          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Retail Margin</span>
+          <span class="ai-b2b-product-margin-{{ai_gen_id}}" data-b2b-margin-value></span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+  <div class="ai-b2b-product-purchase-{{ai_gen_id}}" data-b2b-purchase-area>
+    {% render 'buy-buttons',
+      block: block,
+      product: product,
+      product_form_id: ai_b2b_product_form_id,
+      section_id: section.id,
+      show_quantity: block.settings.show_quantity,
+      show_wishlist: false,
+      show_compare: false,
+      formClass: 'feature-product-form',
+      type: 'main_product'
+    %}
+  </div>
+
+
     </div>
   </div>
 
@@ -461,54 +522,6 @@
       {% endif %}
     </div>
   {% endif %}
-
-  <div class="ai-b2b-product-pricing-{{ai_gen_id}}" data-b2b-pricing>
-    <h3 class="ai-b2b-product-pricing-title-{{ai_gen_id}}">B2B Pricing</h3>
-    <div class="ai-b2b-product-pricing-grid-{{ai_gen_id}}">
-      <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
-        <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Wholesale Price</span>
-        <div class="ai-b2b-product-wholesale-price-{{ai_gen_id}}" data-b2b-wholesale-price>
-          {% render 'price', scope: 'detail', product: product %}
-        </div>
-      </div>
-
-      {% if msrp_metafield != blank and msrp_value != blank %}
-        <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
-          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">MSRP / Suggested Retail Price</span>
-          <span
-            class="ai-b2b-product-msrp-{{ai_gen_id}}"
-            data-b2b-msrp
-            data-b2b-msrp-amount="{{ msrp_value.amount | default: msrp_value }}"
-          >
-            {{ msrp_value | money }}
-          </span>
-        </div>
-
-        <div
-          class="ai-b2b-product-price-row-{{ai_gen_id}} ai-b2b-product-margin-row-{{ai_gen_id}}"
-          data-b2b-margin-row
-          hidden
-        >
-          <span class="ai-b2b-product-price-label-{{ai_gen_id}}">Retail Margin</span>
-          <span class="ai-b2b-product-margin-{{ai_gen_id}}" data-b2b-margin-value></span>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-
-  <div class="ai-b2b-product-purchase-{{ai_gen_id}}" data-b2b-purchase-area>
-    {% render 'buy-buttons',
-      block: block,
-      product: product,
-      product_form_id: ai_b2b_product_form_id,
-      section_id: section.id,
-      show_quantity: block.settings.show_quantity,
-      show_wishlist: false,
-      show_compare: false,
-      formClass: 'feature-product-form',
-      type: 'main_product'
-    %}
-  </div>
 
   <div class="ai-b2b-product-order-info-{{ai_gen_id}}">
     <h3 class="ai-b2b-product-order-title-{{ai_gen_id}}">Order Information</h3>
