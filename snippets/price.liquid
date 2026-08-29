@@ -1,4 +1,31 @@
-{%- comment %}BSS Login{% endcomment -%}{% capture bss_lock_check %} {% render 'bss-lock-condition', scope: 'subject', subject: product, subject_parent: product, variable: 'price', get_content: true, bss_lock_action: 'bss_hide_price' %} {% endcapture %} {% if bss_lock_check contains 'bss-lock-element' %} {{ bss_lock_check }} {% break %} {% endif %}{%- comment %}BSS-Login{% endcomment -%}
+{%- comment -%} BSS B2B price lock + public MSRP for locked visitors {%- endcomment -%}
+{% capture bss_lock_check %}
+  {% render 'bss-lock-condition',
+    scope: 'subject',
+    subject: product,
+    subject_parent: product,
+    variable: 'price',
+    get_content: true,
+    bss_lock_action: 'bss_hide_price'
+  %}
+{% endcapture %}
+{% assign msrp_metafield = product.metafields.custom.msrp %}
+{% assign msrp_value = msrp_metafield.value %}
+
+{% if bss_lock_check contains 'bss-lock-element' %}
+  <div class="card-product-price bss-locked-price-with-msrp {{ class }} flex align-center flex-wrap gap-5 relative">
+    {{ bss_lock_check }}
+
+    {% if scope != 'detail' and msrp_metafield != blank and msrp_value != blank %}
+      <div class="bss-product-msrp">
+        <span class="bss-product-msrp-label">MSRP</span>
+        <span class="bss-product-msrp-value">{{ msrp_value | money }}</span>
+      </div>
+    {% endif %}
+  </div>
+  {% break %}
+{% endif %}
+{%- comment -%} End BSS B2B price lock handling {%- endcomment -%}
 {%- liquid
   assign theme_st = settings
   if scope != 'detail'
