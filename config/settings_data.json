@@ -50,6 +50,8 @@
     "custom_badge_background": "#14854e",
     "product_style": "scale",
     "show_border": true,
+    "show_wishlist": false,
+    "show_compare": false,
     "custom_action_color": "#ffffff",
     "custom_action_background": "#111111",
     "custom_action_hover_background": "#b07c83",
