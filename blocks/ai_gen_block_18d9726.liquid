@@ -463,7 +463,7 @@
 
   {% liquid
     assign has_specs = false
-    if product.metafields.custom.label != blank or product.metafields.custom.format != blank or product.metafields.custom.vinyl_color != blank or product.metafields.custom.number_of_lps != blank or product.selected_or_first_available_variant.barcode != blank or product.selected_or_first_available_variant.sku != blank or product.metafields.custom.release_date != blank
+    if product.metafields.custom.label != blank or product.metafields.custom.genre != blank or product.metafields.custom.format != blank or product.metafields.custom.vinyl_color != blank or product.metafields.custom.number_of_lps != blank or product.selected_or_first_available_variant.barcode != blank or product.selected_or_first_available_variant.sku != blank or product.metafields.custom.release_date != blank
       assign has_specs = true
     endif
   %}
