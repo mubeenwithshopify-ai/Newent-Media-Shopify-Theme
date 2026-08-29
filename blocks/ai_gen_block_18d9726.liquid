@@ -36,6 +36,8 @@
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign msrp_metafield = product.metafields.custom.msrp %}
+{% assign msrp_value = msrp_metafield.value %}
 
 {% style %}
   .ai-b2b-product-{{ai_gen_id}} {
@@ -451,10 +453,16 @@
         </div>
       </div>
 
-      {% if product.metafields.custom.msrp != blank %}
+      {% if msrp_metafield != blank and msrp_value != blank %}
         <div class="ai-b2b-product-price-row-{{ai_gen_id}}">
           <span class="ai-b2b-product-price-label-{{ai_gen_id}}">MSRP / Suggested Retail Price</span>
-          <span class="ai-b2b-product-msrp-{{ai_gen_id}}" data-b2b-msrp>{{ product.metafields.custom.msrp }}</span>
+          <span
+            class="ai-b2b-product-msrp-{{ai_gen_id}}"
+            data-b2b-msrp
+            data-b2b-msrp-amount="{{ msrp_value.amount | default: msrp_value }}"
+          >
+            {{ msrp_value | money }}
+          </span>
         </div>
 
         <div
@@ -551,7 +559,7 @@
 </div>
 
 
-{% if product.metafields.custom.msrp != blank %}
+{% if msrp_metafield != blank and msrp_value != blank %}
   <script>
     (() => {
       const root = document.querySelector('.ai-b2b-product-{{ ai_gen_id }}');
@@ -584,7 +592,8 @@
       };
 
       const updateMargin = () => {
-        const retailPrice = moneyNumber(msrp.textContent || '');
+        const msrpAmount = msrp.getAttribute('data-b2b-msrp-amount') || '';
+        const retailPrice = moneyNumber(msrpAmount) || moneyNumber(msrp.textContent || '');
         const costPrice = wholesaleNumber();
 
         if (!retailPrice || !costPrice || retailPrice <= 0 || costPrice <= 0 || costPrice >= retailPrice) {
