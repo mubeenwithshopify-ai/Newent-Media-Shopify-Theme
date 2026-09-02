@@ -23,7 +23,7 @@
         >
       {%- else -%}
         <a
-          href="{{ routes.account_login_url }}"
+          href="/pages/wholesale-signup"
           aria-label="account"
           class="btn-reset pointer header-icon transition header-color w-44 h-44 inline-flex content-center header__icon-account header-color lh-1"
         >
@@ -58,13 +58,14 @@
           class="btn-reset pointer action-login-popup header-icon transition header-color h-44 inline-flex content-center header__icon-account header-color"
         >
       {%- else -%}
-        <div
+        <a
           aria-label="header icon account"
-          class="btn-reset pointer header-icon header-color h-44 inline-flex content-center header__icon-account header-color {% if customer.email == blank %}action-login{% endif %}"
+          href="/pages/wholesale-signup"
+          class="btn-reset pointer header-icon header-color h-44 inline-flex content-center header__icon-account header-color"
         >
       {%- endif -%}
     {%- endif -%}
-    {%- if customer or enable_login_popup == false -%}
+    {%- if customer -%}
       <a
         class="header-color header-icon lh-1"
         href="{{ routes.account_url }}"
@@ -74,13 +75,13 @@
     <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
       <use href="#icon-account" />
     </svg>
-    {%- if customer or enable_login_popup == false -%}
+    {%- if customer -%}
       </a>
     {%- endif -%}
     <span class="text-icons flex ps-12 text-left flex-column lh-1 1">
       <a
         class="no-underline mb-3"
-        href=" {%- if customer -%}{{ routes.account_logout_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        href=" {%- if customer -%}{{ routes.account_logout_url }}{%- else -%}/pages/wholesale-signup{%- endif -%}"
         aria-label="{{ 'customer.account.title' | t }}"
       >
         <span class="text-icons-top">
@@ -106,7 +107,7 @@
     {%- if customer -%}
       </div>
     {%- else -%}
-      {%- if enable_login_popup and login_one_time == false -%}</button>{%- else -%}</div>{%- endif -%}
+      {%- if enable_login_popup and login_one_time == false -%}</button>{%- else -%}</a>{%- endif -%}
     {%- endif -%}
   </div>
 {% endif %}
