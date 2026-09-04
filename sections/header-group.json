@@ -28,10 +28,10 @@
         "cur_lang_h3VPQf": {
           "type": "cur_lang",
           "settings": {
-            "menu_link": "",
+            "menu_link": "top-bar-menu",
             "show_currency": true,
             "show_language": true,
-            "show_our_store": true,
+            "show_our_store": false,
             "hidden_on_mobile": false
           }
         }
