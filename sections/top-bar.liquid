@@ -188,7 +188,7 @@
             {%- when 'cur_lang' -%}
               <div class="lang__currency-desktop justify-content-center justity-md-unset topbar-item{% if block_st.hidden_on_mobile %} hidden flex-1025{% else %} flex{% endif %} flex-wrap gap-10 gap-lg-25 align-center row-gap-0">
                 {%- if block_st.menu_link != blank -%}
-                  <ul class="linklist list-unstyled flex flex-wrap gap-10 gap-lg-25">
+                  <ul class="linklist list-unstyled flex justify-center flex-wrap gap-10 gap-lg-25">
                     {%- for link in block_st.menu_link.links -%}
                       <li>
                         <a class="no-underline" href="{{ link.url }}" aria-label="{{ link.title }}">
