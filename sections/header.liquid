@@ -103,17 +103,7 @@
 {% if transparent %}
   <div class="relative">
 {% endif %}
-<style>
-  @media screen and (max-width: 1024.98px) {
-    .header-middle .header_search {
-        position: absolute;
-        left: 42px;
-        top: 30px;
-        z-index: 5;
-        margin: 0;
-    }
-}
-</style>
+
 <header
   class="header relative section {% if header_box %}header-box{% endif %} {% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %} gradient remove_spacing color-{{ color_scheme }}{{ transparent_class }}{% if transparent_mobile %}{{ transparent_mobile_class }}{% endif %}{% if request.page_type == 'index' and section_st.separator_line == 'homepage' %} border-bottom{% endif %}{% if section_st.separator_line == 'all-page' %} border-bottom{% endif %}{% if request.page_type != 'index' and section_st.separator_line == 'inner_page' %} border-bottom{% endif %} popup-search-mobile"
   data-section-id="{{ section.id }}"
